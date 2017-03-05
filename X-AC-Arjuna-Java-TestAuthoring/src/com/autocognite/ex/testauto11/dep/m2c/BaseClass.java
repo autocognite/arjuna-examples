@@ -1,35 +1,30 @@
 package com.autocognite.ex.testauto11.dep.m2c;
 
-import org.apache.log4j.Logger;
+import com.autocognite.arjuna.annotations.*;
 
-import com.autocognite.batteries.config.RunConfig;
-import com.autocognite.unitee.annotations.Dependency;
-import com.autocognite.unitee.annotations.TestClass;
-import com.autocognite.unitee.assertions.Assertions;
-import com.autocognite.unitee.enums.DependencyTarget;
+import static com.autocognite.arjuna.assertions.Assertions.*;
 
 @TestClass
 public class BaseClass {
-	private static Logger logger = RunConfig.getCentralLogger();
 	
-	@Dependency(target = DependencyTarget.TEST_CLASSES, testClasses={SuccessfulClass.class})
+	@ClassDependency(SuccessfulClass.class)
 	public void test1() throws Exception{
-		Assertions.assertEquals(1,1);
+		assertEquals(1,1);
 	}
 	
-	@Dependency(target = DependencyTarget.TEST_CLASSES, testClasses={FailureClass.class})
+	@ClassDependency(FailureClass.class)
 	public void test2() throws Exception{
-		Assertions.assertEquals(1,1);
+		assertEquals(1,1);
 	}
 	
-	@Dependency(target = DependencyTarget.TEST_CLASSES, testClasses={SuccessfulClass.class,FailureClass.class})
+	@ClassDependency({SuccessfulClass.class,FailureClass.class})
 	public void test3() throws Exception{
-		Assertions.assertEquals(1,1);
+		assertEquals(1,1);
 	}
 	
-	@Dependency(target = DependencyTarget.TEST_CLASSES, testClasses={ClassWithoutIssuesDepsOnFailure.class})
+	@ClassDependency(ClassWithoutIssuesDepsOnFailure.class)
 	public void test4() throws Exception{
-		Assertions.assertEquals(1,1);
+		assertEquals(1,1);
 	}
 
 }

@@ -18,10 +18,8 @@
  ******************************************************************************/
 package com.autocognite.ex.testauto06.instances;
 
-import static com.autocognite.unitee.assertions.Assertions.assertEquals;
-
-import com.autocognite.unitee.annotations.Instances;
-import com.autocognite.unitee.annotations.TestClass;
+import com.autocognite.arjuna.annotations.*;
+import static com.autocognite.arjuna.assertions.Assertions.*;
 
 @TestClass
 @Instances(5)

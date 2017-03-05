@@ -18,9 +18,9 @@
  ******************************************************************************/
 package com.autocognite.ex.testauto07.multithreading;
 
-import static com.autocognite.unitee.assertions.Assertions.assertEquals;
+import com.autocognite.arjuna.annotations.*;
 
-import com.autocognite.unitee.annotations.TestClass;
+import static com.autocognite.arjuna.assertions.Assertions.*;
 
 @TestClass(methodThreads=3)
 public class ClassWithMultiThreadedMethods{

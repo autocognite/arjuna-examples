@@ -1,16 +1,15 @@
 package com.autocognite.ex.testauto13.dep.c2c;
 
-import com.autocognite.unitee.annotations.Dependency;
-import com.autocognite.unitee.annotations.TestClass;
-import com.autocognite.unitee.assertions.Assertions;
-import com.autocognite.unitee.enums.DependencyTarget;
+import com.autocognite.arjuna.annotations.*;
+
+import static com.autocognite.arjuna.assertions.Assertions.*;
 
 @TestClass
-@Dependency(target = DependencyTarget.TEST_CLASSES, testClasses={FailureClass.class})
+@ClassDependency(FailureClass.class)
 public class ChainDep1 {
 	
 	public void test1Pass() throws Exception{
-		Assertions.assertEquals(1,1);
+		assertEquals(1,1);
 	}
 	
 }

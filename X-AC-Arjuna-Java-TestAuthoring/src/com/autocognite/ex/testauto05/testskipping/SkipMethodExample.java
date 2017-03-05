@@ -18,11 +18,8 @@
  ******************************************************************************/
 package com.autocognite.ex.testauto05.testskipping;
 
-import static com.autocognite.unitee.assertions.Assertions.assertEquals;
-import static com.autocognite.unitee.assertions.Assertions.error;
-
-import com.autocognite.unitee.annotations.Skip;
-import com.autocognite.unitee.annotations.TestClass;
+import com.autocognite.arjuna.annotations.*;
+import static com.autocognite.arjuna.assertions.Assertions.*;
 //
 @TestClass
 public class SkipMethodExample{

@@ -18,13 +18,8 @@
  ******************************************************************************/
 package com.autocognite.ex.testauto04.testprops;
 
-import static com.autocognite.unitee.assertions.Assertions.assertContains;
-import static com.autocognite.unitee.assertions.Assertions.assertEquals;
-import static com.autocognite.unitee.assertions.Assertions.assertNull;
-import static com.autocognite.unitee.assertions.Assertions.error;
-
-import com.autocognite.unitee.annotations.TestClass;
-import com.autocognite.unitee.annotations.TestMethod;
+import com.autocognite.arjuna.annotations.*;
+import static com.autocognite.arjuna.assertions.Assertions.*;
 
 @TestClass(
 		id = "Custom id class level",

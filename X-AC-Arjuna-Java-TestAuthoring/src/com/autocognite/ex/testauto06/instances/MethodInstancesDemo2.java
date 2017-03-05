@@ -18,27 +18,25 @@
  ******************************************************************************/
 package com.autocognite.ex.testauto06.instances;
 
-import static com.autocognite.unitee.assertions.Assertions.assertEquals;
+import com.autocognite.arjuna.annotations.*;
+import com.autocognite.arjuna.interfaces.TestVariables;
 
-import com.autocognite.unitee.annotations.Instances;
-import com.autocognite.unitee.annotations.TestClass;
-import com.autocognite.unitee.assertions.Assertions;
-import com.autocognite.unitee.interfaces.TestVariables;
+import static com.autocognite.arjuna.assertions.Assertions.*;
 
 @TestClass
 public class MethodInstancesDemo2{
 
 	@Instances(udv={"var1=a","var2=b,c"})
 	public void test1(TestVariables testMethodVars) throws Exception{	
-		Assertions.assertEquals(testMethodVars.udv().string("Var1"), "a");
-		Assertions.assertEquals(testMethodVars.udv().string("Var2"), "b");
+		assertEquals(testMethodVars.udv().string("Var1"), "a");
+		assertEquals(testMethodVars.udv().string("Var2"), "b");
 		assertEquals(3,3).evaluate();
 	}
 	
 	@Instances(udv={"var1=x","var2=y,z"})
 	public void test2(TestVariables testMethodVars) throws Exception{
-		Assertions.assertEquals(testMethodVars.udv().string("Var1"), "x");
-		Assertions.assertEquals(testMethodVars.udv().string("Var2"), "y");
+		assertEquals(testMethodVars.udv().string("Var1"), "x");
+		assertEquals(testMethodVars.udv().string("Var2"), "y");
 		assertEquals(1,2);
 	}
 	

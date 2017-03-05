@@ -18,10 +18,10 @@
  ******************************************************************************/
 package com.autocognite.ex.testauto06.instances;
 
-import com.autocognite.unitee.annotations.Instances;
-import com.autocognite.unitee.annotations.TestClass;
-import com.autocognite.unitee.assertions.Assertions;
-import com.autocognite.unitee.interfaces.TestVariables;
+import com.autocognite.arjuna.annotations.*;
+import com.autocognite.arjuna.interfaces.TestVariables;
+
+import static com.autocognite.arjuna.assertions.Assertions.*;
 
 @TestClass
 public class MethodInstancesDemo3{
@@ -32,44 +32,44 @@ public class MethodInstancesDemo3{
 		// Else, the last value provided for a variable is repeated for the rest of the instances.
 		switch (testMethodVars.objectProps().methodInstanceNumber()){
 		case 1:
-			Assertions.assertEquals(testMethodVars.udv().string("Var1"), "a");
-			Assertions.assertEquals(testMethodVars.udv().string("Var2"), "a");
-			Assertions.assertEquals(testMethodVars.udv().string("Var3"), "a");
-			Assertions.assertEquals(testMethodVars.udv().string("Var4"), "a");
-			Assertions.assertEquals(testMethodVars.udv().string("Var5"), "a");
-			Assertions.assertEquals(testMethodVars.udv().string("Var6"), "a");
+			assertEquals(testMethodVars.udv().string("Var1"), "a");
+			assertEquals(testMethodVars.udv().string("Var2"), "a");
+			assertEquals(testMethodVars.udv().string("Var3"), "a");
+			assertEquals(testMethodVars.udv().string("Var4"), "a");
+			assertEquals(testMethodVars.udv().string("Var5"), "a");
+			assertEquals(testMethodVars.udv().string("Var6"), "a");
 			break;
 		case 2:
-			Assertions.assertEquals(testMethodVars.udv().string("Var1"), "a");
-			Assertions.assertEquals(testMethodVars.udv().string("Var2"), "b");
-			Assertions.assertEquals(testMethodVars.udv().string("Var3"), "b");
-			Assertions.assertEquals(testMethodVars.udv().string("Var4"), "b");
-			Assertions.assertEquals(testMethodVars.udv().string("Var5"), "b");
-			Assertions.assertEquals(testMethodVars.udv().string("Var6"), "b");
+			assertEquals(testMethodVars.udv().string("Var1"), "a");
+			assertEquals(testMethodVars.udv().string("Var2"), "b");
+			assertEquals(testMethodVars.udv().string("Var3"), "b");
+			assertEquals(testMethodVars.udv().string("Var4"), "b");
+			assertEquals(testMethodVars.udv().string("Var5"), "b");
+			assertEquals(testMethodVars.udv().string("Var6"), "b");
 			break;
 		case 3:
-			Assertions.assertEquals(testMethodVars.udv().string("Var1"), "a");
-			Assertions.assertEquals(testMethodVars.udv().string("Var2"), "b");
-			Assertions.assertEquals(testMethodVars.udv().string("Var3"), "c");
-			Assertions.assertEquals(testMethodVars.udv().string("Var4"), "c");
-			Assertions.assertEquals(testMethodVars.udv().string("Var5"), "c");
-			Assertions.assertEquals(testMethodVars.udv().string("Var6"), "c");
+			assertEquals(testMethodVars.udv().string("Var1"), "a");
+			assertEquals(testMethodVars.udv().string("Var2"), "b");
+			assertEquals(testMethodVars.udv().string("Var3"), "c");
+			assertEquals(testMethodVars.udv().string("Var4"), "c");
+			assertEquals(testMethodVars.udv().string("Var5"), "c");
+			assertEquals(testMethodVars.udv().string("Var6"), "c");
 			break;
 		case 4:
-			Assertions.assertEquals(testMethodVars.udv().string("Var1"), "a");
-			Assertions.assertEquals(testMethodVars.udv().string("Var2"), "b");
-			Assertions.assertEquals(testMethodVars.udv().string("Var3"), "c");
-			Assertions.assertEquals(testMethodVars.udv().string("Var4"), "d");
-			Assertions.assertEquals(testMethodVars.udv().string("Var5"), "d");
-			Assertions.assertEquals(testMethodVars.udv().string("Var6"), "d");
+			assertEquals(testMethodVars.udv().string("Var1"), "a");
+			assertEquals(testMethodVars.udv().string("Var2"), "b");
+			assertEquals(testMethodVars.udv().string("Var3"), "c");
+			assertEquals(testMethodVars.udv().string("Var4"), "d");
+			assertEquals(testMethodVars.udv().string("Var5"), "d");
+			assertEquals(testMethodVars.udv().string("Var6"), "d");
 			break;
 		case 5:
-			Assertions.assertEquals(testMethodVars.udv().string("Var1"), "a");
-			Assertions.assertEquals(testMethodVars.udv().string("Var2"), "b");
-			Assertions.assertEquals(testMethodVars.udv().string("Var3"), "c");
-			Assertions.assertEquals(testMethodVars.udv().string("Var4"), "d");
-			Assertions.assertEquals(testMethodVars.udv().string("Var5"), "e");
-			Assertions.assertEquals(testMethodVars.udv().string("Var6"), "e");
+			assertEquals(testMethodVars.udv().string("Var1"), "a");
+			assertEquals(testMethodVars.udv().string("Var2"), "b");
+			assertEquals(testMethodVars.udv().string("Var3"), "c");
+			assertEquals(testMethodVars.udv().string("Var4"), "d");
+			assertEquals(testMethodVars.udv().string("Var5"), "e");
+			assertEquals(testMethodVars.udv().string("Var6"), "e");
 			break;
 		}
 	}
