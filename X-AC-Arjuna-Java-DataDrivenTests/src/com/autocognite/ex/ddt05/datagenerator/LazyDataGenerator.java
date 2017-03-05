@@ -21,10 +21,10 @@ package com.autocognite.ex.ddt05.datagenerator;
 import java.util.ArrayList;
 import java.util.Random;
 
+import com.autocognite.arjuna.annotations.*;
 import com.autocognite.batteries.databroker.DataRecord;
 import com.autocognite.batteries.databroker.DataSource;
 import com.autocognite.batteries.databroker.DataSourceFinishedException;
-import com.autocognite.unitee.annotations.ddt.DataGenerator;
 
 /*
  * It's a lazy (non-greedy) generator. All values are loaded in memory ONLY when generated.

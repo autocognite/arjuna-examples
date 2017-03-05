@@ -18,11 +18,11 @@
  ******************************************************************************/
 package com.autocognite.ex.ddt07.dataref;
 
+import com.autocognite.arjuna.annotations.*;
+import com.autocognite.arjuna.interfaces.TestVariables;
 import com.autocognite.batteries.databroker.ReadOnlyDataRecord;
-import com.autocognite.unitee.annotations.TestClass;
-import com.autocognite.unitee.annotations.ddt.FileDataReference;
-import com.autocognite.unitee.assertions.Assertions;
-import com.autocognite.unitee.interfaces.TestVariables;
+
+import static com.autocognite.arjuna.assertions.Assertions.*;
 
 @FileDataReference(path = "dataref.xls", name="test")
 @TestClass
@@ -33,12 +33,14 @@ public class MethodLevelDataReferenceExample{
 		ReadOnlyDataRecord dataRec = null;
 		// My
 		dataRec = testMethodVars.dataRef("test").getRecord("Bronze");
-		Assertions.assertEquals(dataRec.value("user").asString(), "B1");
+		assertEquals(dataRec.value("user").asString(), "B1");
+		
 		// Class
 		dataRec = testMethodVars.dataRef("somename").getRecord("Bronze");
-		Assertions.assertEquals(dataRec.value("user").asString(), "B1");
+		assertEquals(dataRec.value("user").asString(), "B1");
+		
 		// Central
 		dataRec = testMethodVars.dataRef("dataref").getRecord("Bronze");
-		Assertions.assertEquals(dataRec.value("user").asString(), "B1");
+		assertEquals(dataRec.value("user").asString(), "B1");
 	}
 }

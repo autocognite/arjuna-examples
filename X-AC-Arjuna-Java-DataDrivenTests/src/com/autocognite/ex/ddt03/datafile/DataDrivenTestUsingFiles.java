@@ -18,12 +18,11 @@
  ******************************************************************************/
 package com.autocognite.ex.ddt03.datafile;
 
-import static com.autocognite.unitee.assertions.Assertions.assertEquals;
-
+import com.autocognite.arjuna.annotations.*;
+import com.autocognite.arjuna.interfaces.TestVariables;
 import com.autocognite.batteries.databroker.ReadOnlyDataRecord;
-import com.autocognite.unitee.annotations.TestClass;
-import com.autocognite.unitee.annotations.ddt.DriveWithDataFile;
-import com.autocognite.unitee.interfaces.TestVariables;
+
+import static com.autocognite.arjuna.assertions.Assertions.*;
 
 @TestClass
 public class DataDrivenTestUsingFiles{
