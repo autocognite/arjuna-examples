@@ -15,8 +15,7 @@
  ******************************************************************************/
 package com.autocognite.ex.uiauto04.web.pageobjectmodel;
 
-import com.autocognite.arjuna.uiauto.interfaces.Page;
-import com.autocognite.arjuna.uiauto.interfaces.UiDriver;
+import com.autocognite.arjuna.uiauto.interfaces.*;
 import com.autocognite.arjuna.uiauto.lib.BasePageSection;
 import com.autocognite.uiautomator.ex.config.WordPressConfiguration;
 

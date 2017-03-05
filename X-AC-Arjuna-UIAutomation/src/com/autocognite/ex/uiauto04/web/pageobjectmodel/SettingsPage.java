@@ -15,10 +15,8 @@
  ******************************************************************************/
 package com.autocognite.ex.uiauto04.web.pageobjectmodel;
 
-import static com.autocognite.unitee.assertions.Assertions.assertTrue;
-
-import com.autocognite.arjuna.uiauto.interfaces.UiDriver;
-import com.autocognite.arjuna.uiauto.interfaces.UiElement;
+import com.autocognite.arjuna.uiauto.interfaces.*;
+import static com.autocognite.arjuna.assertions.Assertions.*;
 
 public class SettingsPage extends DashBoardPage {
 	public SettingsPage (UiDriver uiDriver) throws Exception{

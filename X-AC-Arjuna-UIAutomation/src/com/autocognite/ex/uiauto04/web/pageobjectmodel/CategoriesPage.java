@@ -15,8 +15,7 @@
  ******************************************************************************/
 package com.autocognite.ex.uiauto04.web.pageobjectmodel;
 
-import com.autocognite.arjuna.uiauto.interfaces.UiDriver;
-import com.autocognite.arjuna.uiauto.interfaces.UiElement;
+import com.autocognite.arjuna.uiauto.interfaces.*;
 
 public class CategoriesPage extends DashBoardPage {
 	public CategoriesPage (UiDriver uiDriver) throws Exception{

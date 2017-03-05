@@ -15,8 +15,8 @@
  ******************************************************************************/
 package com.autocognite.ex.uiauto04.web.pageobjectmodel;
 
+import com.autocognite.arjuna.annotations.*;
 import com.autocognite.arjuna.uiauto.factories.UiDriverFactory;
-import com.autocognite.unitee.annotations.TestClass;
 
 @TestClass
 public class WPTest {

@@ -18,14 +18,11 @@
  ******************************************************************************/
 package com.autocognite.ex.uiauto02.web.pages;
 
-import static com.autocognite.unitee.assertions.Assertions.assertTrue;
-
+import com.autocognite.arjuna.annotations.*;
 import com.autocognite.arjuna.uiauto.factories.UiDriverFactory;
 import com.autocognite.arjuna.uiauto.factories.UiFactory;
-import com.autocognite.arjuna.uiauto.interfaces.Page;
-import com.autocognite.arjuna.uiauto.interfaces.UiDriver;
-import com.autocognite.arjuna.uiauto.interfaces.UiElement;
-import com.autocognite.unitee.annotations.TestClass;
+import com.autocognite.arjuna.uiauto.interfaces.*;
+import static com.autocognite.arjuna.assertions.Assertions.*;
 
 @TestClass
 public class WebTestAutomationWithBasicUI {
