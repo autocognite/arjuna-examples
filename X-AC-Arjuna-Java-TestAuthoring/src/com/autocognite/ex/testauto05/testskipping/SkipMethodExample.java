@@ -37,7 +37,7 @@ public class SkipMethodExample{
 		error();
 	}
 
-	public void setUpClass(){
+	public static void setUpClass(){
 		System.out.println("" + ": Called setUpClass");
 	}
 	
@@ -57,7 +57,7 @@ public class SkipMethodExample{
 		System.out.println("" + ": Called tearDownMethod");
 	}
 	
-	public void tearDownClass(){
+	public static void tearDownClass(){
 		System.out.println("" + ": Called tearDownClass");
 	}
 }

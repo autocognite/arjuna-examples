@@ -24,7 +24,7 @@ import static com.autocognite.arjuna.assertions.Assertions.*;
 @TestClass
 public class DefaultNamedFixtures{
 	
-	public void setUpClass(){
+	public static void setUpClass(){
 		System.out.println("" + ": Called setUpClass");
 	}
 	
@@ -44,7 +44,7 @@ public class DefaultNamedFixtures{
 		System.out.println("" + ": Called tearDownMethod");
 	}
 	
-	public void tearDownClass(){
+	public static void tearDownClass(){
 		System.out.println("" + ": Called tearDownClass");
 	}
 

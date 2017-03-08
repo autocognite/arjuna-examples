@@ -19,9 +19,9 @@
 package com.autocognite.ex.ddt04.datamethod;
 
 import com.autocognite.arjuna.annotations.*;
+import com.autocognite.arjuna.interfaces.ReadOnlyDataRecord;
 import com.autocognite.arjuna.interfaces.TestVariables;
-import com.autocognite.batteries.databroker.DataRecordContainer;
-import com.autocognite.batteries.databroker.ReadOnlyDataRecord;
+import com.autocognite.pvt.batteries.databroker.DataRecordContainer;
 
 import static com.autocognite.arjuna.assertions.Assertions.*;
 

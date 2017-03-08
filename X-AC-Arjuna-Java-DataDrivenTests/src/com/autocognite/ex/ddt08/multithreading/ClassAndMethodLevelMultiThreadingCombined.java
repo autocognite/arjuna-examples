@@ -19,8 +19,8 @@
 package com.autocognite.ex.ddt08.multithreading;
 
 import com.autocognite.arjuna.annotations.*;
+import com.autocognite.arjuna.interfaces.ReadOnlyDataRecord;
 import com.autocognite.arjuna.interfaces.TestVariables;
-import com.autocognite.batteries.databroker.ReadOnlyDataRecord;
 import com.autocognite.ex.ddt05.datagenerator.LazyDataGenerator;
 
 import static com.autocognite.arjuna.assertions.Assertions.*;

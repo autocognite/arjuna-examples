@@ -19,9 +19,9 @@
 package com.autocognite.ex.ddt06.fixtures;
 
 import com.autocognite.arjuna.annotations.*;
+import com.autocognite.arjuna.config.RunConfig;
+import com.autocognite.arjuna.interfaces.ReadOnlyDataRecord;
 import com.autocognite.arjuna.interfaces.TestVariables;
-import com.autocognite.batteries.config.RunConfig;
-import com.autocognite.batteries.databroker.ReadOnlyDataRecord;
 
 import static com.autocognite.arjuna.assertions.Assertions.*;
 
