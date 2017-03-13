@@ -19,7 +19,7 @@
 package com.autocognite.ex.ddt07.dataref;
 
 import com.autocognite.arjuna.annotations.*;
-import com.autocognite.arjuna.interfaces.ReadOnlyDataRecord;
+import com.autocognite.arjuna.interfaces.DataRecord;
 import com.autocognite.arjuna.interfaces.TestVariables;
 
 import static com.autocognite.arjuna.assertions.Assertions.*;
@@ -29,12 +29,12 @@ import static com.autocognite.arjuna.assertions.Assertions.*;
 public class ClassLevelDataReferenceExample2{
 	
 	public ClassLevelDataReferenceExample2(TestVariables classTestVars) throws Exception{
-		ReadOnlyDataRecord dataRec = classTestVars.dataRef("test").getRecord("Bronze");
+		DataRecord dataRec = classTestVars.dataRef("test").getRecord("Bronze");
 		assertEquals(dataRec.value("user").asString(), "B1");
 	}
 
 	public void testEx(TestVariables testMethodVars) throws Exception{	
-		ReadOnlyDataRecord dataRec = testMethodVars.dataRef("test").getRecord("Bronze");
+		DataRecord dataRec = testMethodVars.dataRef("test").getRecord("Bronze");
 		assertEquals(dataRec.value("user").asString(), "B1");
 	}
 }

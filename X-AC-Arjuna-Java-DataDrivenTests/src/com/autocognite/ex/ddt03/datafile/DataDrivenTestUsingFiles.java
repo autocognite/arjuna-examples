@@ -19,7 +19,7 @@
 package com.autocognite.ex.ddt03.datafile;
 
 import com.autocognite.arjuna.annotations.*;
-import com.autocognite.arjuna.interfaces.ReadOnlyDataRecord;
+import com.autocognite.arjuna.interfaces.DataRecord;
 import com.autocognite.arjuna.interfaces.TestVariables;
 
 import static com.autocognite.arjuna.assertions.Assertions.*;
@@ -30,31 +30,24 @@ public class DataDrivenTestUsingFiles{
 	// The arguments is an absolute path or path inside/relative to default data sources (/data/sources) directory.
 	// For these examples, the files are assumed to be present inside the default directory
 	
-	@DriveWithDataFile("input.xls")
-	public void testWithXLSDataFile(TestVariables testVars) throws Exception{
-		ReadOnlyDataRecord record = testVars.dataRecord();
-		String actual = String.format("%s::%s", record.valueAt(0), record.valueAt(1));
-		assertEquals(actual, record.valueAt(2));
-	}	
-	
 	@DriveWithDataFile(path="input.xls")
-	public void testWithXLSDataFileMapFormat(TestVariables testVars) throws Exception{
-		ReadOnlyDataRecord record = testVars.dataRecord();
-		String actual = String.format("%s::%s", record.value("left"), record.value("right"));
-		assertEquals(actual, record.value("EXPECTED"));
+	public void testWithXLS(TestVariables testVars) throws Exception{
+		DataRecord record = testVars.dataRecord();
+		String actual = String.format("%s::%s", record.value("left").asString(), record.value("right").asString());
+		assertEquals(actual, record.value("EXPECTED").asString());
 	}
 	
 	// You can use a tab delimited file in the same manner
 	@DriveWithDataFile("input.txt")
 	public void testWithTSVDataFile(TestVariables testVars) throws Exception{
-		ReadOnlyDataRecord record = testVars.dataRecord();
+		DataRecord record = testVars.dataRecord();
 		String actual = String.format("%s::%s", record.valueAt(0), record.valueAt(1));
 		assertEquals(actual, record.valueAt(2));
 	}
 	
 	@DriveWithDataFile(path="input.txt")
 	public void testWithTSVDataFileMapFormat(TestVariables testVars) throws Exception{
-		ReadOnlyDataRecord record = testVars.dataRecord();
+		DataRecord record = testVars.dataRecord();
 		String actual = String.format("%s::%s", record.value("left"), record.value("right"));
 		assertEquals(actual, record.value("EXPECTED"));
 	}
@@ -65,14 +58,14 @@ public class DataDrivenTestUsingFiles{
 			delimiter = ","
 	)
 	public void testWithCSVDataFile(TestVariables testVars) throws Exception{
-		ReadOnlyDataRecord record = testVars.dataRecord();
+		DataRecord record = testVars.dataRecord();
 		String actual = String.format("%s::%s", record.valueAt(0), record.valueAt(1));
 		assertEquals(actual, record.valueAt(2));
 	}	
 	
 	@DriveWithDataFile(path = "input.csv", delimiter = ",")
 	public void testWithCSVDataFileMapFormat(TestVariables testVars) throws Exception{
-		ReadOnlyDataRecord record = testVars.dataRecord();
+		DataRecord record = testVars.dataRecord();
 		String actual = String.format("%s::%s", record.value("left"), record.value("right"));
 		assertEquals(actual, record.value("EXPECTED"));
 	}
@@ -82,7 +75,7 @@ public class DataDrivenTestUsingFiles{
 	// This means that the INI format should only be used for Map data format.	
 	@DriveWithDataFile(path = "input.ini")
 	public void testWithINIDataFileMapFormat(TestVariables testVars) throws Exception{
-		ReadOnlyDataRecord record = testVars.dataRecord();
+		DataRecord record = testVars.dataRecord();
 		String actual = String.format("%s::%s", record.value("left"), record.value("right"));
 		assertEquals(actual, record.value("EXPECTED"));
 	}

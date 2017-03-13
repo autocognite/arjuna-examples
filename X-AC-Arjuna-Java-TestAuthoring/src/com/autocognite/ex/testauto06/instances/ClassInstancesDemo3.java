@@ -77,7 +77,7 @@ public class ClassInstancesDemo3{
 	public void test1(TestVariables testMethodVars) throws Exception{	
 		// You have access to class level uds at method level as well
 		assertEquals(testMethodVars.udv().string("Var1"), "a");
-		assertEquals(3,3).evaluate();
+		assertEquals(3,3);
 	}
 	
 	public void test2(TestVariables testMethodVars) throws Exception{

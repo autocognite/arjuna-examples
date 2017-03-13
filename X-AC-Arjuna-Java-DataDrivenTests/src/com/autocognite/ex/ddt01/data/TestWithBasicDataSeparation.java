@@ -19,7 +19,7 @@
 package com.autocognite.ex.ddt01.data;
 
 import com.autocognite.arjuna.annotations.*;
-import com.autocognite.arjuna.interfaces.ReadOnlyDataRecord;
+import com.autocognite.arjuna.interfaces.DataRecord;
 import com.autocognite.arjuna.interfaces.TestVariables;
 
 import static com.autocognite.arjuna.assertions.Assertions.*;
@@ -30,16 +30,16 @@ public class TestWithBasicDataSeparation{
 	
 	@DriveWithData({"1","2","1::2"})
 	public void testPass(TestVariables testVars) throws Exception{
-		ReadOnlyDataRecord record = testVars.dataRecord();
+		DataRecord record = testVars.dataRecord();
 		String actual = String.format("%s::%s", record.valueAt(0), record.valueAt(1));
-		assertEquals(actual, record.valueAt(2));
+		assertEquals(actual, record.stringAt(2));
 	}
 	
 	@DriveWithData({"1","2","1::3"})
 	public void testFail(TestVariables testVars) throws Exception{
-		ReadOnlyDataRecord record = testVars.dataRecord();
+		DataRecord record = testVars.dataRecord();
 		String actual = String.format("%s::%s", record.valueAt(0), record.valueAt(1));
-		assertEquals(actual, record.valueAt(2));
+		assertEquals(actual, record.stringAt(2));
 	}
 	
 	@DriveWithData(
@@ -47,9 +47,9 @@ public class TestWithBasicDataSeparation{
 			record={"1","2","1::2"}
 	)
 	public void testWithHeaders(TestVariables testVars) throws Exception{
-		ReadOnlyDataRecord record = testVars.dataRecord();
-		String actual = String.format("%s::%s", record.value("left"), record.value("right"));
-		assertEquals(actual, record.value("EXPECTED"));
+		DataRecord record = testVars.dataRecord();
+		String actual = String.format("%s::%s", record.value("left").asString(), record.value("right").asString());
+		assertEquals(actual, record.value("EXPECTED").asString());
 	}
 }
 

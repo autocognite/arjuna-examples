@@ -26,7 +26,7 @@ import static com.autocognite.arjuna.assertions.Assertions.*;
 public class ClassInstancesDemo1{
 
 	public void test1() throws Exception{	
-		assertEquals(3,3).evaluate();
+		assertEquals(3,3);
 	}
 	
 	public void test2() throws Exception{

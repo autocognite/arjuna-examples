@@ -35,7 +35,7 @@ public class ClassInstancesDemo2{
 	public void test1(TestVariables testMethodVars) throws Exception{	
 		assertEquals(testMethodVars.udv().string("Var1"), "a");
 		assertEquals(testMethodVars.udv().string("Var2"), "c");
-		assertEquals(3,3).evaluate();
+		assertEquals(3,3);
 	}
 	
 	public void test2(TestVariables testMethodVars) throws Exception{

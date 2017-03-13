@@ -19,7 +19,7 @@
 package com.autocognite.ex.ddt08.multithreading;
 
 import com.autocognite.arjuna.annotations.*;
-import com.autocognite.arjuna.interfaces.ReadOnlyDataRecord;
+import com.autocognite.arjuna.interfaces.DataRecord;
 import com.autocognite.arjuna.interfaces.TestVariables;
 import com.autocognite.ex.ddt05.datagenerator.LazyDataGenerator;
 
@@ -52,7 +52,7 @@ public class ClassMethodMuliThreadInstances{
 	@DriveWithDataGenerator(generatorClass = LazyDataGenerator.class)
 	@TestMethod(testThreads=5)
 	public void test1(TestVariables testVars) throws Exception{
-		ReadOnlyDataRecord record = testVars.dataRecord();
+		DataRecord record = testVars.dataRecord();
 		String actual = String.format("%s::%s", record.value("left").asString(), record.value("right").asString());
 		assertEquals(actual, record.value("EXPECTED").asString());
 	}	
@@ -61,7 +61,7 @@ public class ClassMethodMuliThreadInstances{
 	@DriveWithDataGenerator(generatorClass = LazyDataGenerator.class)
 	@TestMethod(testThreads=5)
 	public void test2(TestVariables testVars) throws Exception{
-		ReadOnlyDataRecord record = testVars.dataRecord();
+		DataRecord record = testVars.dataRecord();
 		String actual = String.format("%s::%s", record.value("left").asString(), record.value("right").asString());
 		assertEquals(actual, record.value("EXPECTED").asString());
 	}	

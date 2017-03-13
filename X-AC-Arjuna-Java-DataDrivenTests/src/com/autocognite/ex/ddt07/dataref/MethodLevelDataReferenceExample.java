@@ -19,7 +19,7 @@
 package com.autocognite.ex.ddt07.dataref;
 
 import com.autocognite.arjuna.annotations.*;
-import com.autocognite.arjuna.interfaces.ReadOnlyDataRecord;
+import com.autocognite.arjuna.interfaces.DataRecord;
 import com.autocognite.arjuna.interfaces.TestVariables;
 
 import static com.autocognite.arjuna.assertions.Assertions.*;
@@ -30,7 +30,7 @@ public class MethodLevelDataReferenceExample{
 
 	@FileDataReference(path = "dataref.xls", name="somename")
 	public void testEx(TestVariables testMethodVars) throws Exception{	
-		ReadOnlyDataRecord dataRec = null;
+		DataRecord dataRec = null;
 		// My
 		dataRec = testMethodVars.dataRef("test").getRecord("Bronze");
 		assertEquals(dataRec.value("user").asString(), "B1");

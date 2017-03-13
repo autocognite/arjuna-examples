@@ -19,7 +19,7 @@
 package com.autocognite.ex.ddt05.datagenerator;
 
 import com.autocognite.arjuna.annotations.*;
-import com.autocognite.arjuna.interfaces.ReadOnlyDataRecord;
+import com.autocognite.arjuna.interfaces.DataRecord;
 import com.autocognite.arjuna.interfaces.TestVariables;
 
 import static com.autocognite.arjuna.assertions.Assertions.*;
@@ -29,7 +29,7 @@ public class DataDrivenTestUsingNonAnnotatedGenerator{
 	
 	@DriveWithDataGenerator(generatorClass = NonAnnotatedGreedyDG.class)
 	public void testNonAnnotatedDG(TestVariables testVars) throws Exception{
-		ReadOnlyDataRecord record = testVars.dataRecord();
+		DataRecord record = testVars.dataRecord();
 		String actual = String.format("%s::%s", record.value("left"), record.value("right"));
 		assertEquals(actual, record.value("EXPECTED"));
 	}	

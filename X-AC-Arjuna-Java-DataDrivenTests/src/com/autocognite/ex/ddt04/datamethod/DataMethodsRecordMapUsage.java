@@ -19,9 +19,10 @@
 package com.autocognite.ex.ddt04.datamethod;
 
 import com.autocognite.arjuna.annotations.*;
-import com.autocognite.arjuna.interfaces.ReadOnlyDataRecord;
+import com.autocognite.arjuna.bases.DefaultDataRecordContainer;
+import com.autocognite.arjuna.interfaces.DataRecord;
+import com.autocognite.arjuna.interfaces.DataRecordContainer;
 import com.autocognite.arjuna.interfaces.TestVariables;
-import com.autocognite.pvt.batteries.databroker.DataRecordContainer;
 
 import static com.autocognite.arjuna.assertions.Assertions.*;
 
@@ -30,7 +31,7 @@ public class DataMethodsRecordMapUsage{
 	
 	@DataMethod("DG2")
 	public static DataRecordContainer getMapData(){
-		DataRecordContainer container = new DataRecordContainer();
+		DataRecordContainer container = new DefaultDataRecordContainer();
 		// Create headers and assign to container
 		String[] names = {"left", "right", "expected"};
 		container.setHeaders(names);
@@ -45,7 +46,7 @@ public class DataMethodsRecordMapUsage{
 
 	@DriveWithDataMethod(name="DG2") 
 	public void testWithLocalNamedGeneratorMethodMapFormat(TestVariables testVars) throws Exception{
-		ReadOnlyDataRecord record = testVars.dataRecord();
+		DataRecord record = testVars.dataRecord();
 		String actual = String.format("%s::%s", record.value("left"), record.value("right"));
 		assertEquals(actual, record.value("EXPECTED"));
 	}	

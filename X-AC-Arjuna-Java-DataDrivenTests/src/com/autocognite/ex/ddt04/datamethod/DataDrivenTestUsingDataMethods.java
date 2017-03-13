@@ -19,7 +19,7 @@
 package com.autocognite.ex.ddt04.datamethod;
 
 import com.autocognite.arjuna.annotations.*;
-import com.autocognite.arjuna.interfaces.ReadOnlyDataRecord;
+import com.autocognite.arjuna.interfaces.DataRecord;
 import com.autocognite.arjuna.interfaces.TestVariables;
 
 import static com.autocognite.arjuna.assertions.Assertions.*;
@@ -38,9 +38,9 @@ public class DataDrivenTestUsingDataMethods{
 
 	@DriveWithDataMethod("getData")
 	public void testWithLocalDataMethod1(TestVariables testVars) throws Exception{
-		ReadOnlyDataRecord record = testVars.dataRecord();
-		String actual = String.format("%s::%s", record.valueAt(0), record.valueAt(1));
-		assertEquals(actual, record.valueAt(2));
+		DataRecord record = testVars.dataRecord();
+		String actual = String.format("%s::%s", record.valueAt(0).asString(), record.valueAt(1).asString());
+		assertEquals(actual, record.valueAt(2).asString());
 	}	
 	
 	
@@ -55,9 +55,9 @@ public class DataDrivenTestUsingDataMethods{
 
 	@DriveWithDataMethod("User defined data method name")
 	public void testWithLocalDataMethod2(TestVariables testVars) throws Exception{
-		ReadOnlyDataRecord record = testVars.dataRecord();
-		String actual = String.format("%s::%s", record.valueAt(0), record.valueAt(1));
-		assertEquals(actual, record.valueAt(2));
+		DataRecord record = testVars.dataRecord();
+		String actual = String.format("%s::%s", record.valueAt(0).asString(), record.valueAt(1).asString());
+		assertEquals(actual, record.valueAt(2).asString());
 	}
 
 }

@@ -19,7 +19,7 @@
 package com.autocognite.ex.ddt05.datagenerator;
 
 import com.autocognite.arjuna.annotations.*;
-import com.autocognite.arjuna.interfaces.ReadOnlyDataRecord;
+import com.autocognite.arjuna.interfaces.DataRecord;
 import com.autocognite.arjuna.interfaces.TestVariables;
 
 import static com.autocognite.arjuna.assertions.Assertions.*;
@@ -29,17 +29,17 @@ public class DataDrivenTestUsingDataGenerators{
 	
 	@DriveWithDataGenerator(name="Greedy")
 	public void testGreedy(TestVariables testVars) throws Exception{
-		ReadOnlyDataRecord record = testVars.dataRecord();
-		String actual = String.format("%s::%s", record.value("left"), record.value("right"));
-		assertEquals(actual, record.value("EXPECTED"));
+		DataRecord record = testVars.dataRecord();
+		String actual = String.format("%s::%s", record.value("left").asString(), record.value("right").asString());
+		assertEquals(actual, record.value("EXPECTED").asString());
 	}	
 	
 	@TestMethod(testThreads=10)
 	@DriveWithDataGenerator(name="Lazy")
 	public void testLazy(TestVariables testVars) throws Exception{
-		ReadOnlyDataRecord record = testVars.dataRecord();
-		String actual = String.format("%s::%s", record.value("left"), record.value("right"));
-		assertEquals(actual, record.value("EXPECTED"));
+		DataRecord record = testVars.dataRecord();
+		String actual = String.format("%s::%s", record.value("left").asString(), record.value("right").asString());
+		assertEquals(actual, record.value("EXPECTED").asString());
 	}		
 
 }

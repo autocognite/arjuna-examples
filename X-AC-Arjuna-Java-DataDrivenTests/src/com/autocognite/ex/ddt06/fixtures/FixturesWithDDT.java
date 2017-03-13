@@ -20,7 +20,7 @@ package com.autocognite.ex.ddt06.fixtures;
 
 import com.autocognite.arjuna.annotations.*;
 import com.autocognite.arjuna.config.RunConfig;
-import com.autocognite.arjuna.interfaces.ReadOnlyDataRecord;
+import com.autocognite.arjuna.interfaces.DataRecord;
 import com.autocognite.arjuna.interfaces.TestVariables;
 
 import static com.autocognite.arjuna.assertions.Assertions.*;
@@ -75,28 +75,28 @@ public class FixturesWithDDT{
 
 	@DriveWithDataMethod("getData")
 	public void test1(TestVariables testVars) throws Exception{
-		ReadOnlyDataRecord record = testVars.dataRecord();
+		DataRecord record = testVars.dataRecord();
 		String actual = String.format("%s::%s", record.valueAt(0), record.valueAt(1));
 		assertEquals(actual, record.valueAt(2));
 	}	
 	
 	@DriveWithDataMethod("getData")
 	public void test2(TestVariables testVars) throws Exception{
-		ReadOnlyDataRecord record = testVars.dataRecord();
+		DataRecord record = testVars.dataRecord();
 		String actual = String.format("%s::%s", record.valueAt(0), record.valueAt(1));
 		assertEquals(actual, record.valueAt(2));
 	}
 	
 	@DriveWithDataMethod("getData2")
 	public void test3(TestVariables testVars) throws Exception{
-		ReadOnlyDataRecord record = testVars.dataRecord();
+		DataRecord record = testVars.dataRecord();
 		String actual = String.format("%s::%s", record.valueAt(0), record.valueAt(1));
 		assertEquals(actual, record.valueAt(2));
 	}
 	
 	@DriveWithDataMethod("getData2")
 	public void test4(TestVariables testVars) throws Exception{
-		ReadOnlyDataRecord record = testVars.dataRecord();
+		DataRecord record = testVars.dataRecord();
 		String actual = String.format("%s::%s", record.valueAt(0), record.valueAt(1));
 		assertEquals(actual, record.valueAt(2));
 	}	

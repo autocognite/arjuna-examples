@@ -19,7 +19,7 @@
 package com.autocognite.ex.ddt04.datamethod;
 
 import com.autocognite.arjuna.annotations.*;
-import com.autocognite.arjuna.interfaces.ReadOnlyDataRecord;
+import com.autocognite.arjuna.interfaces.DataRecord;
 import com.autocognite.arjuna.interfaces.TestVariables;
 
 import static com.autocognite.arjuna.assertions.Assertions.*;
@@ -31,7 +31,7 @@ public class DataDrivenTestUsingExternalMethods{
 			containerClass = MethodContainer.class
 	)
 	public void testByProvidingClass(TestVariables testVars) throws Exception{
-		ReadOnlyDataRecord record = testVars.dataRecord();
+		DataRecord record = testVars.dataRecord();
 		String actual = String.format("%s::%s", record.valueAt(0), record.valueAt(1));
 		assertEquals(actual, record.valueAt(2));
 	}
@@ -42,7 +42,7 @@ public class DataDrivenTestUsingExternalMethods{
 			containerClass = AnnotatedMethodContainer.class
 	)
 	public void testByProvidingClass2(TestVariables testVars) throws Exception{
-		ReadOnlyDataRecord record = testVars.dataRecord();
+		DataRecord record = testVars.dataRecord();
 		String actual = String.format("%s::%s", record.valueAt(0), record.valueAt(1));
 		assertEquals(actual, record.valueAt(2));
 	}
@@ -52,7 +52,7 @@ public class DataDrivenTestUsingExternalMethods{
 			container = "AnnotatedMethodContainer"
 	)
 	public void testByProvidingClassName1(TestVariables testVars) throws Exception{
-		ReadOnlyDataRecord record = testVars.dataRecord();
+		DataRecord record = testVars.dataRecord();
 		String actual = String.format("%s::%s", record.valueAt(0), record.valueAt(1));
 		assertEquals(actual, record.valueAt(2));
 	}
@@ -62,7 +62,7 @@ public class DataDrivenTestUsingExternalMethods{
 			container = "User defined data method container name"
 	)
 	public void testByProvidingClassName2(TestVariables testVars) throws Exception{
-		ReadOnlyDataRecord record = testVars.dataRecord();
+		DataRecord record = testVars.dataRecord();
 		String actual = String.format("%s::%s", record.valueAt(0), record.valueAt(1));
 		assertEquals(actual, record.valueAt(2));
 	}

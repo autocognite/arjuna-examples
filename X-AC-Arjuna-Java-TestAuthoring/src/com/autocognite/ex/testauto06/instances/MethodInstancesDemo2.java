@@ -30,7 +30,7 @@ public class MethodInstancesDemo2{
 	public void test1(TestVariables testMethodVars) throws Exception{	
 		assertEquals(testMethodVars.udv().string("Var1"), "a");
 		assertEquals(testMethodVars.udv().string("Var2"), "b");
-		assertEquals(3,3).evaluate();
+		assertEquals(3,3);
 	}
 	
 	@Instances(udv={"var1=x","var2=y,z"})

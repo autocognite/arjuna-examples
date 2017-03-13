@@ -19,7 +19,7 @@
 package com.autocognite.ex.ddt02.dataarray;
 
 import com.autocognite.arjuna.annotations.*;
-import com.autocognite.arjuna.interfaces.ReadOnlyDataRecord;
+import com.autocognite.arjuna.interfaces.DataRecord;
 import com.autocognite.arjuna.interfaces.TestVariables;
 
 import static com.autocognite.arjuna.assertions.Assertions.*;
@@ -43,9 +43,9 @@ public class DataDrivenTestWithDataArray{
 	)
 	@TestMethod(testThreads=3)
 	public void test(TestVariables testVars) throws Exception{
-		ReadOnlyDataRecord record = testVars.dataRecord();
-		String actual = String.format("%s::%s", record.valueAt(0), record.valueAt(1));
-		assertEquals(actual, record.valueAt(2));
+		DataRecord record = testVars.dataRecord();
+		String actual = String.format("%s::%s", record.valueAt(0).asString(), record.valueAt(1).asString());
+		assertEquals(actual, record.valueAt(2).asString());
 	}	
 	
 	@DriveWithDataArray(
@@ -56,9 +56,9 @@ public class DataDrivenTestWithDataArray{
 			}
 	)
 	public void testWithHeaders(TestVariables testVars) throws Exception{
-		ReadOnlyDataRecord record = testVars.dataRecord();
-		String actual = String.format("%s::%s", record.value("left"), record.value("right"));
-		assertEquals(actual, record.value("EXPECTED"));
+		DataRecord record = testVars.dataRecord();
+		String actual = String.format("%s::%s", record.value("left").asString(), record.value("right").asString());
+		assertEquals(actual, record.value("EXPECTED").asString());
 	}
 	
 }

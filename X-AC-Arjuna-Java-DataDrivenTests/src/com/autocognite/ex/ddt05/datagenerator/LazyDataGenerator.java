@@ -22,9 +22,9 @@ import java.util.ArrayList;
 import java.util.Random;
 
 import com.autocognite.arjuna.annotations.*;
+import com.autocognite.arjuna.bases.DefaultDataRecord;
 import com.autocognite.arjuna.exceptions.DataSourceFinishedException;
 import com.autocognite.arjuna.interfaces.DataSource;
-import com.autocognite.pvt.batteries.databroker.DataRecord;
 
 /*
  * It's a lazy (non-greedy) generator. All values are loaded in memory ONLY when generated.
@@ -42,9 +42,9 @@ public class LazyDataGenerator implements DataSource {
 	}
 
 	@Override
-	public synchronized DataRecord next() throws DataSourceFinishedException {
+	public synchronized DefaultDataRecord next() throws DataSourceFinishedException {
 		counter += 1;
-		DataRecord record = null;
+		DefaultDataRecord record = null;
 		ArrayList<Object> objList = new ArrayList<Object>();
 		if (counter < 20){
 			int l = random.nextInt(9);
@@ -58,7 +58,7 @@ public class LazyDataGenerator implements DataSource {
 			objList.add(r);
 			// The buffer string is added to simulate failures.
 			objList.add(String.format("%d::%d%s",l,r, buffer));
-			record = new DataRecord(this.headers, objList);
+			record = new DefaultDataRecord(this.headers, objList);
 			return record;		
 		} else {
 			throw new DataSourceFinishedException("Done");

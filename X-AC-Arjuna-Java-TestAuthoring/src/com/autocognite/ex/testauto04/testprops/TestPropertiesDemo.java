@@ -31,12 +31,12 @@ public class TestPropertiesDemo{
 
 	@TestMethod()
 	public void testPropInheritance() throws Exception{	
-		assertEquals(3,3).evaluate();
+		assertEquals(3,3);
 	}
 
 	@TestMethod(id="Custom id-1", name="a", priority=3)
 	public void test1MethodPass() throws Exception{	
-		assertEquals(3,3).evaluate();
+		assertEquals(3,3);
 	}
 	
 	@TestMethod(id="Custom id-2", name="b")

@@ -20,10 +20,11 @@ package com.autocognite.ex.ddt05.datagenerator;
 
 import java.util.Iterator;
 
+import com.autocognite.arjuna.bases.DefaultDataRecordContainer;
 import com.autocognite.arjuna.exceptions.DataSourceFinishedException;
 import com.autocognite.arjuna.interfaces.DataSource;
-import com.autocognite.arjuna.interfaces.ReadOnlyDataRecord;
-import com.autocognite.pvt.batteries.databroker.DataRecordContainer;
+import com.autocognite.arjuna.interfaces.DataRecord;
+import com.autocognite.arjuna.interfaces.DataRecordContainer;
 
 /*
  * It's greedy. All values are loaded in memory.
@@ -33,10 +34,10 @@ import com.autocognite.pvt.batteries.databroker.DataRecordContainer;
 //
 public class NonAnnotatedGreedyDG implements DataSource {
 	DataRecordContainer container = null;
-	Iterator<ReadOnlyDataRecord> iter = null;
+	Iterator<DataRecord> iter = null;
 	
 	public NonAnnotatedGreedyDG(){
-		container = new DataRecordContainer();
+		container = new DefaultDataRecordContainer();
 		// Create headers and assign to container
 		String[] names = {"left", "right", "expected"};
 		container.setHeaders(names);
@@ -50,7 +51,7 @@ public class NonAnnotatedGreedyDG implements DataSource {
 	}
 
 	@Override
-	public synchronized ReadOnlyDataRecord next() throws DataSourceFinishedException {
+	public synchronized DataRecord next() throws DataSourceFinishedException {
 		//This code is fully under your control as well.
 		if(iter.hasNext()){
 			return iter.next();
