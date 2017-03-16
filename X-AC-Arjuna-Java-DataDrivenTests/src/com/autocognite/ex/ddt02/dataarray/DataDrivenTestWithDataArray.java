@@ -45,7 +45,7 @@ public class DataDrivenTestWithDataArray{
 	public void test(TestVariables testVars) throws Exception{
 		DataRecord record = testVars.dataRecord();
 		String actual = String.format("%s::%s", record.valueAt(0).asString(), record.valueAt(1).asString());
-		assertEquals(actual, record.valueAt(2).asString());
+		assertEquals("Sample Purpose", actual, record.valueAt(2).asString());
 	}	
 	
 	@DriveWithDataArray(
@@ -58,7 +58,7 @@ public class DataDrivenTestWithDataArray{
 	public void testWithHeaders(TestVariables testVars) throws Exception{
 		DataRecord record = testVars.dataRecord();
 		String actual = String.format("%s::%s", record.value("left").asString(), record.value("right").asString());
-		assertEquals(actual, record.value("EXPECTED").asString());
+		assertEquals("Sample Purpose", actual, record.value("EXPECTED").asString());
 	}
 	
 }

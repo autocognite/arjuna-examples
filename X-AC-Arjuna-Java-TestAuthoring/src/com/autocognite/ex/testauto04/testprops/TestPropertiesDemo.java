@@ -31,22 +31,22 @@ public class TestPropertiesDemo{
 
 	@TestMethod()
 	public void testPropInheritance() throws Exception{	
-		assertEquals(3,3);
+		assertEquals("Sample Purpose", 3,3);
 	}
 
 	@TestMethod(id="Custom id-1", name="a", priority=3)
 	public void test1MethodPass() throws Exception{	
-		assertEquals(3,3);
+		assertEquals("Sample Purpose", 3,3);
 	}
 	
 	@TestMethod(id="Custom id-2", name="b")
 	public void test2MethodFail() throws Exception{
-		assertEquals(1,2);
+		assertEquals("Sample Purpose", 1,2);
 	}
 	
 	@TestMethod(id="Custom id-3", customProps={"my1=5","POLICY Name = Hoho", "qh_prop=c", "tags=abc", "s=2"})
 	public void test3MethodFail() throws Exception{
-		assertNull("abc");
+		assertNull("Dummy purpose","abc");
 	}
 	
 	@TestMethod(id="Custom id-4", customProps={"POLICY Name = Hoho1", "qh_prop=d", "tags=def"})
@@ -56,6 +56,6 @@ public class TestPropertiesDemo{
 
 	@TestMethod(id="Custom id-5", customProps={"POLICY Name = Hoho2", "name=f", "tags=xyz"})
 	public void test5methodError2() throws Exception{
-		error();
+		error("Dummy Error");
 	}
 }

@@ -77,28 +77,28 @@ public class FixturesWithDDT{
 	public void test1(TestVariables testVars) throws Exception{
 		DataRecord record = testVars.dataRecord();
 		String actual = String.format("%s::%s", record.valueAt(0), record.valueAt(1));
-		assertEquals(actual, record.valueAt(2));
+		assertEquals("Sample Purpose", actual, record.valueAt(2));
 	}	
 	
 	@DriveWithDataMethod("getData")
 	public void test2(TestVariables testVars) throws Exception{
 		DataRecord record = testVars.dataRecord();
 		String actual = String.format("%s::%s", record.valueAt(0), record.valueAt(1));
-		assertEquals(actual, record.valueAt(2));
+		assertEquals("Sample Purpose", actual, record.valueAt(2));
 	}
 	
 	@DriveWithDataMethod("getData2")
 	public void test3(TestVariables testVars) throws Exception{
 		DataRecord record = testVars.dataRecord();
 		String actual = String.format("%s::%s", record.valueAt(0), record.valueAt(1));
-		assertEquals(actual, record.valueAt(2));
+		assertEquals("Sample Purpose", actual, record.valueAt(2));
 	}
 	
 	@DriveWithDataMethod("getData2")
 	public void test4(TestVariables testVars) throws Exception{
 		DataRecord record = testVars.dataRecord();
 		String actual = String.format("%s::%s", record.valueAt(0), record.valueAt(1));
-		assertEquals(actual, record.valueAt(2));
+		assertEquals("Sample Purpose", actual, record.valueAt(2));
 	}	
 }
 

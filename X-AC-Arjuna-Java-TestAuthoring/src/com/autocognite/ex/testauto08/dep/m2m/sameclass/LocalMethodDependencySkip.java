@@ -9,7 +9,7 @@ public class LocalMethodDependencySkip {
 	
 	@MethodDependency("test2")
 	public void test1() throws Exception{
-		assertEquals(1,1);
+		assertEquals("Sample Purpose", 1,1);
 	}
 
 	@Skip

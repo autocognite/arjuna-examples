@@ -28,14 +28,14 @@ public class TestMultipleAssertionTypes{
 	 * Example Code - Basic Assertion without Message, Expected to pass
 	 */
 	public void testPassingAssertion() throws Exception{
-		assertTrue(true);
+		assertTrue("Did file writing succeed?", true);
 	}
 	
 	/*
 	 * Example Code - Basic Assertion without Message, Expected to pass
 	 */
 	public void testFailingAssertion() throws Exception{
-		assertTrue(false);
+		assertTrue("Did file writing succeed?", false);
 	}
 	
 	/*

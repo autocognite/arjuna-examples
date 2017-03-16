@@ -26,11 +26,11 @@ import static com.autocognite.arjuna.assertions.Assertions.*;
 public class ClassInstancesDemo1{
 
 	public void test1() throws Exception{	
-		assertEquals(3,3);
+		assertEquals("Sample Purpose", 3,3);
 	}
 	
 	public void test2() throws Exception{
-		assertEquals(1,2);
+		assertEquals("Sample Purpose", 1,2);
 	}
 	
 }

@@ -50,11 +50,11 @@ public class DefaultNamedFixtures{
 
 	public void testMethod1() throws Exception{
 		System.out.println("" + ": Called testMethod 1");
-		assertEquals(1,1);
+		assertEquals("Sample Purpose", 1,1);
 	}
 	
 	public void testMethod2() throws Exception{
 		System.out.println("" + ": Called testMethod 2");
-		assertEquals(3,4);
+		assertEquals("Sample Purpose", 3,4);
 	}
 }

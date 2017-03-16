@@ -9,11 +9,11 @@ public class ChainDep1 {
 	
 	@MethodDependency("test2")
 	public void test1() throws Exception{
-		assertEquals(1,1);
+		assertEquals("Sample Purpose", 1,1);
 	}
 
 	public void test2() throws Exception{
-		assertEquals(1,2);
+		assertEquals("Sample Purpose", 1,2);
 	}
 
 }

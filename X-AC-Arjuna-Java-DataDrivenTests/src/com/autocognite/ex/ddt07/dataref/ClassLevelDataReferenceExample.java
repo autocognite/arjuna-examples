@@ -30,11 +30,11 @@ public class ClassLevelDataReferenceExample{
 	
 	public ClassLevelDataReferenceExample(TestVariables classTestVars) throws Exception{
 		DataRecord dataRec = classTestVars.dataRef("dataref").getRecord("Bronze");
-		assertEquals(dataRec.value("user").asString(), "B1");
+		assertEquals("Sample Purpose", dataRec.value("user").asString(), "B1");
 	}
 
 	public void testEx(TestVariables testMethodVars) throws Exception{	
 		DataRecord dataRec = testMethodVars.dataRef("dataref").getRecord("Bronze");
-		assertEquals(dataRec.value("user").asString(), "B1");
+		assertEquals("Sample Purpose", dataRec.value("user").asString(), "B1");
 	}
 }

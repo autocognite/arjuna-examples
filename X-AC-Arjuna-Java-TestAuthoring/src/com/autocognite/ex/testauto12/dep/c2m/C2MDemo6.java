@@ -9,11 +9,11 @@ import static com.autocognite.arjuna.assertions.Assertions.*;
 public class C2MDemo6 {
 	
 	public void test1() throws Exception{
-		assertEquals(1,1);
+		assertEquals("Sample Purpose", 1,1);
 	}
 
 	public void test2() throws Exception{
-		assertEquals(1,1);
+		assertEquals("Sample Purpose", 1,1);
 	}
 
 }

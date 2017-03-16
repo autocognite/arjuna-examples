@@ -54,7 +54,7 @@ public class ClassMethodMuliThreadInstances{
 	public void test1(TestVariables testVars) throws Exception{
 		DataRecord record = testVars.dataRecord();
 		String actual = String.format("%s::%s", record.value("left").asString(), record.value("right").asString());
-		assertEquals(actual, record.value("EXPECTED").asString());
+		assertEquals("Sample Purpose", actual, record.value("EXPECTED").asString());
 	}	
 	
 	@Instances(count=30, instanceThreads=4)
@@ -63,6 +63,6 @@ public class ClassMethodMuliThreadInstances{
 	public void test2(TestVariables testVars) throws Exception{
 		DataRecord record = testVars.dataRecord();
 		String actual = String.format("%s::%s", record.value("left").asString(), record.value("right").asString());
-		assertEquals(actual, record.value("EXPECTED").asString());
+		assertEquals("Sample Purpose", actual, record.value("EXPECTED").asString());
 	}	
 }

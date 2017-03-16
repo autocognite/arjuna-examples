@@ -9,16 +9,16 @@ public class LocalMethodChainDependencySkip1 {
 	
 	@MethodDependency("test2")
 	public void test1() throws Exception{
-		assertEquals(1,1);
+		assertEquals("Sample Purpose", 1,1);
 	}
 
 	@Skip
 	@MethodDependency("test3")
 	public void test2() throws Exception{
-		assertEquals(1,1);
+		assertEquals("Sample Purpose", 1,1);
 	}
 	
 	public void test3() throws Exception{
-		error();
+		error("Dummy Error");
 	}
 }

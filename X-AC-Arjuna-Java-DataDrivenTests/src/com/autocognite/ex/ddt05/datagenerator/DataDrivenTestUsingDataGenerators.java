@@ -31,7 +31,7 @@ public class DataDrivenTestUsingDataGenerators{
 	public void testGreedy(TestVariables testVars) throws Exception{
 		DataRecord record = testVars.dataRecord();
 		String actual = String.format("%s::%s", record.value("left").asString(), record.value("right").asString());
-		assertEquals(actual, record.value("EXPECTED").asString());
+		assertEquals("Sample Purpose", actual, record.value("EXPECTED").asString());
 	}	
 	
 	@TestMethod(testThreads=10)
@@ -39,7 +39,7 @@ public class DataDrivenTestUsingDataGenerators{
 	public void testLazy(TestVariables testVars) throws Exception{
 		DataRecord record = testVars.dataRecord();
 		String actual = String.format("%s::%s", record.value("left").asString(), record.value("right").asString());
-		assertEquals(actual, record.value("EXPECTED").asString());
+		assertEquals("Sample Purpose", actual, record.value("EXPECTED").asString());
 	}		
 
 }

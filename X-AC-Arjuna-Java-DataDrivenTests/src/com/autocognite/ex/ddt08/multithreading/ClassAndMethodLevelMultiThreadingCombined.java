@@ -33,7 +33,7 @@ public class ClassAndMethodLevelMultiThreadingCombined{
 	public void test1(TestVariables testVars) throws Exception{
 		DataRecord record = testVars.dataRecord();
 		String actual = String.format("%s::%s", record.value("left"), record.value("right"));
-		assertEquals(actual, record.value("EXPECTED"));
+		assertEquals("Sample Purpose", actual, record.value("EXPECTED"));
 	}	
 	
 	@DriveWithDataGenerator(generatorClass = LazyDataGenerator.class)
@@ -41,6 +41,6 @@ public class ClassAndMethodLevelMultiThreadingCombined{
 	public void test2(TestVariables testVars) throws Exception{
 		DataRecord record = testVars.dataRecord();
 		String actual = String.format("%s::%s", record.value("left"), record.value("right"));
-		assertEquals(actual, record.value("EXPECTED"));
+		assertEquals("Sample Purpose", actual, record.value("EXPECTED"));
 	}	
 }

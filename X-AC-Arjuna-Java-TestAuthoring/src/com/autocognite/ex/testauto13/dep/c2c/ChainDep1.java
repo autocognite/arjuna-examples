@@ -9,7 +9,7 @@ import static com.autocognite.arjuna.assertions.Assertions.*;
 public class ChainDep1 {
 	
 	public void test1Pass() throws Exception{
-		assertEquals(1,1);
+		assertEquals("Sample Purpose", 1,1);
 	}
 	
 }

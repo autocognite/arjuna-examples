@@ -33,7 +33,7 @@ public class DataDrivenTestUsingExternalMethods{
 	public void testByProvidingClass(TestVariables testVars) throws Exception{
 		DataRecord record = testVars.dataRecord();
 		String actual = String.format("%s::%s", record.valueAt(0), record.valueAt(1));
-		assertEquals(actual, record.valueAt(2));
+		assertEquals("Sample Purpose", actual, record.valueAt(2));
 	}
 	
 	
@@ -44,7 +44,7 @@ public class DataDrivenTestUsingExternalMethods{
 	public void testByProvidingClass2(TestVariables testVars) throws Exception{
 		DataRecord record = testVars.dataRecord();
 		String actual = String.format("%s::%s", record.valueAt(0), record.valueAt(1));
-		assertEquals(actual, record.valueAt(2));
+		assertEquals("Sample Purpose", actual, record.valueAt(2));
 	}
 	
 	@DriveWithDataMethod(
@@ -54,7 +54,7 @@ public class DataDrivenTestUsingExternalMethods{
 	public void testByProvidingClassName1(TestVariables testVars) throws Exception{
 		DataRecord record = testVars.dataRecord();
 		String actual = String.format("%s::%s", record.valueAt(0), record.valueAt(1));
-		assertEquals(actual, record.valueAt(2));
+		assertEquals("Sample Purpose", actual, record.valueAt(2));
 	}
 	
 	@DriveWithDataMethod(
@@ -64,7 +64,7 @@ public class DataDrivenTestUsingExternalMethods{
 	public void testByProvidingClassName2(TestVariables testVars) throws Exception{
 		DataRecord record = testVars.dataRecord();
 		String actual = String.format("%s::%s", record.valueAt(0), record.valueAt(1));
-		assertEquals(actual, record.valueAt(2));
+		assertEquals("Sample Purpose", actual, record.valueAt(2));
 	}
 
 }

@@ -71,11 +71,11 @@ public class WebTestAutomationWithUiApp {
 		// Experiments with Select control - Selection using different attributes
 		UiElement roleDropDown = settings.element("ROLE");
 		roleDropDown.selectLabel("Author");
-		assertTrue(roleDropDown.hasSelectedLabel("Author"));
+		assertTrue("Check Author Role Selected", roleDropDown.hasSelectedLabel("Author"));
 		roleDropDown.selectIndex(0);
-		assertTrue(roleDropDown.hasSelectedIndex(0));
+		assertTrue("Check Author Role Selected", roleDropDown.hasSelectedIndex(0));
 		roleDropDown.selectValue("author");
-		assertTrue(roleDropDown.hasSelectedValue("author"));
+		assertTrue("Check Author Role Selected", roleDropDown.hasSelectedValue("author"));
 
 		settings.goTo(logoutUrl);
 

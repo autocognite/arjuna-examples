@@ -9,22 +9,22 @@ public class SecondClass {
 	
 	@MethodDependency(testMethods = {"test1C3Pass"}, containerClass=ThirdClass.class)
 	public void test1C2DepOnThird1_ShouldPass() throws Exception{
-		assertEquals(1,1);
+		assertEquals("Sample Purpose", 1,1);
 	}
 
 	@MethodDependency(testMethods = {"test2C3Fail"}, containerClass=ThirdClass.class)
 	public void test2C2DepOnThird2_ShouldExclude() throws Exception{
-		assertEquals(1,1);
+		assertEquals("Sample Purpose", 1,1);
 	}
 	
 	@MethodDependency(testMethods = {"test3C3Error"}, containerClass=ThirdClass.class)
 	public void test3C2DepOnThird3_ShouldExclude() throws Exception{
-		assertEquals(1,1);
+		assertEquals("Sample Purpose", 1,1);
 	}
 	
 	@MethodDependency(testMethods = {"test4C3Skipped"}, containerClass=ThirdClass.class)
 	public void test4C2DepOnThird4_ShouldPass() throws Exception{
-		assertEquals(1,1);
+		assertEquals("Sample Purpose", 1,1);
 	}
 	
 }

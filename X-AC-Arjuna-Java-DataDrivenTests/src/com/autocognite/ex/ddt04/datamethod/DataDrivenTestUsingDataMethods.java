@@ -40,7 +40,7 @@ public class DataDrivenTestUsingDataMethods{
 	public void testWithLocalDataMethod1(TestVariables testVars) throws Exception{
 		DataRecord record = testVars.dataRecord();
 		String actual = String.format("%s::%s", record.valueAt(0).asString(), record.valueAt(1).asString());
-		assertEquals(actual, record.valueAt(2).asString());
+		assertEquals("Sample Purpose", actual, record.valueAt(2).asString());
 	}	
 	
 	
@@ -57,7 +57,7 @@ public class DataDrivenTestUsingDataMethods{
 	public void testWithLocalDataMethod2(TestVariables testVars) throws Exception{
 		DataRecord record = testVars.dataRecord();
 		String actual = String.format("%s::%s", record.valueAt(0).asString(), record.valueAt(1).asString());
-		assertEquals(actual, record.valueAt(2).asString());
+		assertEquals("Sample Purpose", actual, record.valueAt(2).asString());
 	}
 
 }

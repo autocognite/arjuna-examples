@@ -8,7 +8,7 @@ import static com.autocognite.arjuna.assertions.Assertions.*;
 public class FailureClass {
 	
 	public void test1Pass() throws Exception{
-		assertEquals(1,1);
+		assertEquals("Sample Purpose", 1,1);
 	}
 	
 	public void test2Fail() throws Exception{

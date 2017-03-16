@@ -28,16 +28,16 @@ public class MethodInstancesDemo2{
 
 	@Instances(udv={"var1=a","var2=b,c"})
 	public void test1(TestVariables testMethodVars) throws Exception{	
-		assertEquals(testMethodVars.udv().string("Var1"), "a");
-		assertEquals(testMethodVars.udv().string("Var2"), "b");
-		assertEquals(3,3);
+		assertEquals("Sample Purpose", testMethodVars.udv().string("Var1"), "a");
+		assertEquals("Sample Purpose", testMethodVars.udv().string("Var2"), "b");
+		assertEquals("Sample Purpose", 3,3);
 	}
 	
 	@Instances(udv={"var1=x","var2=y,z"})
 	public void test2(TestVariables testMethodVars) throws Exception{
-		assertEquals(testMethodVars.udv().string("Var1"), "x");
-		assertEquals(testMethodVars.udv().string("Var2"), "y");
-		assertEquals(1,2);
+		assertEquals("Sample Purpose", testMethodVars.udv().string("Var1"), "x");
+		assertEquals("Sample Purpose", testMethodVars.udv().string("Var2"), "y");
+		assertEquals("Sample Purpose", 1,2);
 	}
 	
 }

@@ -34,7 +34,7 @@ public class DataDrivenTestUsingFiles{
 	public void testWithXLS(TestVariables testVars) throws Exception{
 		DataRecord record = testVars.dataRecord();
 		String actual = String.format("%s::%s", record.value("left").asString(), record.value("right").asString());
-		assertEquals(actual, record.value("EXPECTED").asString());
+		assertEquals("Sample Purpose", actual, record.value("EXPECTED").asString());
 	}
 	
 	// You can use a tab delimited file in the same manner
@@ -42,14 +42,14 @@ public class DataDrivenTestUsingFiles{
 	public void testWithTSVDataFile(TestVariables testVars) throws Exception{
 		DataRecord record = testVars.dataRecord();
 		String actual = String.format("%s::%s", record.valueAt(0), record.valueAt(1));
-		assertEquals(actual, record.valueAt(2));
+		assertEquals("Sample Purpose", actual, record.valueAt(2));
 	}
 	
 	@DriveWithDataFile(path="input.txt")
 	public void testWithTSVDataFileMapFormat(TestVariables testVars) throws Exception{
 		DataRecord record = testVars.dataRecord();
 		String actual = String.format("%s::%s", record.value("left"), record.value("right"));
-		assertEquals(actual, record.value("EXPECTED"));
+		assertEquals("Sample Purpose", actual, record.value("EXPECTED"));
 	}
 	
 	// You can use a CSV file or any other delimited file by specifying delimiter
@@ -60,14 +60,14 @@ public class DataDrivenTestUsingFiles{
 	public void testWithCSVDataFile(TestVariables testVars) throws Exception{
 		DataRecord record = testVars.dataRecord();
 		String actual = String.format("%s::%s", record.valueAt(0), record.valueAt(1));
-		assertEquals(actual, record.valueAt(2));
+		assertEquals("Sample Purpose", actual, record.valueAt(2));
 	}	
 	
 	@DriveWithDataFile(path = "input.csv", delimiter = ",")
 	public void testWithCSVDataFileMapFormat(TestVariables testVars) throws Exception{
 		DataRecord record = testVars.dataRecord();
 		String actual = String.format("%s::%s", record.value("left"), record.value("right"));
-		assertEquals(actual, record.value("EXPECTED"));
+		assertEquals("Sample Purpose", actual, record.value("EXPECTED"));
 	}
 	
 	// You can also use INI file.
@@ -77,7 +77,7 @@ public class DataDrivenTestUsingFiles{
 	public void testWithINIDataFileMapFormat(TestVariables testVars) throws Exception{
 		DataRecord record = testVars.dataRecord();
 		String actual = String.format("%s::%s", record.value("left"), record.value("right"));
-		assertEquals(actual, record.value("EXPECTED"));
+		assertEquals("Sample Purpose", actual, record.value("EXPECTED"));
 	}
 	
 }

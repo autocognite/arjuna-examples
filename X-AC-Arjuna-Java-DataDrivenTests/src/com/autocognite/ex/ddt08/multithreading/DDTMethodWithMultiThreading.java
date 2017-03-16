@@ -32,6 +32,6 @@ public class DDTMethodWithMultiThreading{
 	public void testNonAnnotatedDG(TestVariables testVars) throws Exception{
 		DataRecord record = testVars.dataRecord();
 		String actual = String.format("%s::%s", record.value("left"), record.value("right"));
-		assertEquals(actual, record.value("EXPECTED"));
+		assertEquals("Sample Purpose", actual, record.value("EXPECTED"));
 	}	
 }

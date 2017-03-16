@@ -33,14 +33,14 @@ public class MethodLevelDataReferenceExample{
 		DataRecord dataRec = null;
 		// My
 		dataRec = testMethodVars.dataRef("test").getRecord("Bronze");
-		assertEquals(dataRec.value("user").asString(), "B1");
+		assertEquals("Sample Purpose", dataRec.value("user").asString(), "B1");
 		
 		// Class
 		dataRec = testMethodVars.dataRef("somename").getRecord("Bronze");
-		assertEquals(dataRec.value("user").asString(), "B1");
+		assertEquals("Sample Purpose", dataRec.value("user").asString(), "B1");
 		
 		// Central
 		dataRec = testMethodVars.dataRef("dataref").getRecord("Bronze");
-		assertEquals(dataRec.value("user").asString(), "B1");
+		assertEquals("Sample Purpose", dataRec.value("user").asString(), "B1");
 	}
 }

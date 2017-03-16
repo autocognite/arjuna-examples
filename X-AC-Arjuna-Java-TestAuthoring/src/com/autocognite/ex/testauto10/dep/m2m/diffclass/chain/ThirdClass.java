@@ -8,23 +8,23 @@ import static com.autocognite.arjuna.assertions.Assertions.*;
 public class ThirdClass {
 	
 	public void test1C3Pass() throws Exception{
-		assertEquals(1,1);
+		assertEquals("Sample Purpose", 1,1);
 	}
 	
 	public void test2C3Fail() throws Exception{
-		fail();
+		fail("Dummy Failure");
 	}
 	
 	public void test3C3Error() throws Exception{
-		error();
+		error("Dummy Error");
 	}
 	
 	@Skip
 	public void test4C3Skipped() throws Exception{
-		error();
+		error("Dummy Error");
 	}
 	
 	public void nonTestMethod() throws Exception{
-		error();
+		error("Dummy Error");
 	}
 }

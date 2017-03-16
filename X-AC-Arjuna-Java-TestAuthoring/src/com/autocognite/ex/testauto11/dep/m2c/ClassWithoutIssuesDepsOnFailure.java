@@ -9,7 +9,7 @@ public class ClassWithoutIssuesDepsOnFailure {
 	
 	@ClassDependency(FailureClass.class)
 	public void test1Pass() throws Exception{
-		assertEquals(1,1);
+		assertEquals("Sample Purpose", 1,1);
 	}
 	
 }

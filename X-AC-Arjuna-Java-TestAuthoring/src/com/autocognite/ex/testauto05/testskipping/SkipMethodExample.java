@@ -25,16 +25,16 @@ import static com.autocognite.arjuna.assertions.Assertions.*;
 public class SkipMethodExample{
 
 	public void testMethodPass() throws Exception{	
-		assertEquals(1,1);
+		assertEquals("Sample Purpose", 1,1);
 	}
 	
 	@Skip
-	public void testMethodFail() throws Exception{
-		assertEquals(1,2);
+	public void testMethodFail( ) throws Exception{
+		assertEquals("Sample Purpose", 1,2);
 	}
 	
 	public void testMethodError() throws Exception{
-		error();
+		error("Dummy Error");
 	}
 
 	public static void setUpClass(){

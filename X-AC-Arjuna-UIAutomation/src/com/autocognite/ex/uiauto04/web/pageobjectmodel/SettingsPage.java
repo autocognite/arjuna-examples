@@ -33,10 +33,10 @@ public class SettingsPage extends DashBoardPage {
 		
 		UiElement role = element("ROLE");
 		role.selectLabel("Author");
-		assertTrue(role.hasSelectedLabel("Author"));
+		assertTrue("Check Author Role Selected", role.hasSelectedLabel("Author"));
 		role.selectIndex(0);
-		assertTrue(role.hasSelectedIndex(0));
+		assertTrue("Check Author Role Selected", role.hasSelectedIndex(0));
 		role.selectValue("author");
-		assertTrue(role.hasSelectedValue("author"));
+		assertTrue("Check Author Role Selected", role.hasSelectedValue("author"));
 	}
 }
