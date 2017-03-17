@@ -32,15 +32,15 @@ public class MethodLevelDataReferenceExample{
 	public void testEx(TestVariables testMethodVars) throws Exception{	
 		DataRecord dataRec = null;
 		// My
-		dataRec = testMethodVars.dataRef("test").getRecord("Bronze");
+		dataRec = testMethodVars.dataRef("test").record("Bronze");
 		assertEquals("Sample Purpose", dataRec.value("user").asString(), "B1");
 		
 		// Class
-		dataRec = testMethodVars.dataRef("somename").getRecord("Bronze");
+		dataRec = testMethodVars.dataRef("somename").record("Bronze");
 		assertEquals("Sample Purpose", dataRec.value("user").asString(), "B1");
 		
 		// Central
-		dataRec = testMethodVars.dataRef("dataref").getRecord("Bronze");
+		dataRec = testMethodVars.dataRef("dataref").record("Bronze");
 		assertEquals("Sample Purpose", dataRec.value("user").asString(), "B1");
 	}
 }
