@@ -24,7 +24,7 @@ import static com.autocognite.arjuna.assertions.Assertions.*;
 @TestClass(
 		id = "Custom id class level",
 		name="Custom name", 
-		customProps={"my1=3"},
+		utp={"my1=3"},
 		priority=2
 )
 public class TestPropertiesDemo{
@@ -44,17 +44,17 @@ public class TestPropertiesDemo{
 		assertEquals("Sample Purpose", 1,2);
 	}
 	
-	@TestMethod(id="Custom id-3", customProps={"my1=5","POLICY Name = Hoho", "qh_prop=c", "tags=abc", "s=2"})
+	@TestMethod(id="Custom id-3", utp={"my1=5","POLICY Name = Hoho", "qh_prop=c", "tags=abc", "s=2"})
 	public void test3MethodFail() throws Exception{
 		assertNull("Dummy purpose","abc");
 	}
 	
-	@TestMethod(id="Custom id-4", customProps={"POLICY Name = Hoho1", "qh_prop=d", "tags=def"})
+	@TestMethod(id="Custom id-4", utp={"POLICY Name = Hoho1", "qh_prop=d", "tags=def"})
 	public void test4MethodFail() throws Exception{
 		assertContains("Some purpose", "parent", "rent1");
 	}
 
-	@TestMethod(id="Custom id-5", customProps={"POLICY Name = Hoho2", "name=f", "tags=xyz"})
+	@TestMethod(id="Custom id-5", utp={"POLICY Name = Hoho2", "name=f", "tags=xyz"})
 	public void test5methodError2() throws Exception{
 		error("Dummy Error");
 	}
