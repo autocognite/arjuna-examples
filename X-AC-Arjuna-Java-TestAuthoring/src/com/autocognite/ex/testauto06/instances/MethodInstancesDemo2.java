@@ -26,17 +26,17 @@ import static com.autocognite.arjuna.assertions.Assertions.*;
 @TestClass
 public class MethodInstancesDemo2{
 
-	@Instances(udv={"var1=a","var2=b,c"})
+	@Instances(utv={"var1=a","var2=b,c"})
 	public void test1(TestVariables testMethodVars) throws Exception{	
-		assertEquals("Sample Purpose", testMethodVars.udv().string("Var1"), "a");
-		assertEquals("Sample Purpose", testMethodVars.udv().string("Var2"), "b");
+		assertEquals("Sample Purpose", testMethodVars.utv().string("Var1"), "a");
+		assertEquals("Sample Purpose", testMethodVars.utv().string("Var2"), "b");
 		assertEquals("Sample Purpose", 3,3);
 	}
 	
-	@Instances(udv={"var1=x","var2=y,z"})
+	@Instances(utv={"var1=x","var2=y,z"})
 	public void test2(TestVariables testMethodVars) throws Exception{
-		assertEquals("Sample Purpose", testMethodVars.udv().string("Var1"), "x");
-		assertEquals("Sample Purpose", testMethodVars.udv().string("Var2"), "y");
+		assertEquals("Sample Purpose", testMethodVars.utv().string("Var1"), "x");
+		assertEquals("Sample Purpose", testMethodVars.utv().string("Var2"), "y");
 		assertEquals("Sample Purpose", 1,2);
 	}
 	

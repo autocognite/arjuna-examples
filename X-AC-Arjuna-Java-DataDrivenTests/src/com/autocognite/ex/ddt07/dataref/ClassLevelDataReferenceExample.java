@@ -29,12 +29,12 @@ import static com.autocognite.arjuna.assertions.Assertions.*;
 public class ClassLevelDataReferenceExample{
 	
 	public ClassLevelDataReferenceExample(TestVariables classTestVars) throws Exception{
-		DataRecord dataRec = classTestVars.dataRef("dataref").record("Bronze");
+		DataRecord dataRec = classTestVars.refer("dataref").record("Bronze");
 		assertEquals("Sample Purpose", dataRec.value("user").asString(), "B1");
 	}
 
 	public void testEx(TestVariables testMethodVars) throws Exception{	
-		DataRecord dataRec = testMethodVars.dataRef("dataref").record("Bronze");
+		DataRecord dataRec = testMethodVars.refer("dataref").record("Bronze");
 		assertEquals("Sample Purpose", dataRec.value("user").asString(), "B1");
 	}
 }

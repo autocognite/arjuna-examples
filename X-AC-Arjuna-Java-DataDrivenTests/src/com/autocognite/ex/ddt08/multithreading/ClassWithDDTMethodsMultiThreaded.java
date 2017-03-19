@@ -30,14 +30,14 @@ public class ClassWithDDTMethodsMultiThreaded{
 
 	@DriveWithDataGenerator(generatorClass = LazyDataGenerator.class)
 	public void test1(TestVariables testVars) throws Exception{
-		DataRecord record = testVars.dataRecord();
+		DataRecord record = testVars.record();
 		String actual = String.format("%s::%s", record.value("left"), record.value("right"));
 		assertEquals("Sample Purpose", actual, record.value("EXPECTED"));
 	}	
 	
 	@DriveWithDataGenerator(generatorClass = LazyDataGenerator.class)
 	public void test2(TestVariables testVars) throws Exception{
-		DataRecord record = testVars.dataRecord();
+		DataRecord record = testVars.record();
 		String actual = String.format("%s::%s", record.value("left"), record.value("right"));
 		assertEquals("Sample Purpose", actual, record.value("EXPECTED"));
 	}	

@@ -24,65 +24,65 @@ import com.autocognite.arjuna.interfaces.TestVariables;
 import static com.autocognite.arjuna.assertions.Assertions.*;
 
 @TestClass
-@Instances(count = 5, udv={"var1=a","var2=a,b","var3=a,b,c","var4=a,b,c,d","var5=a,b,c,d,e", "var6=a,b,c,d,e,f"})
+@Instances(count = 5, utv={"var1=a","var2=a,b","var3=a,b,c","var4=a,b,c,d","var5=a,b,c,d,e", "var6=a,b,c,d,e,f"})
 public class ClassInstancesDemo3{
 	
 	public ClassInstancesDemo3(TestVariables testClassVars) throws Exception{
 		// Unitee assigns the comma separated values uniquely to test class instances, if they are defined
 		// Else, the last value provided for a variable is repeated for the rest of the instances.
-		switch (testClassVars.objectProps().classInstanceNumber()){
+		switch (testClassVars.object().classInstanceNumber()){
 		case 1:
-			assertEquals("Sample Purpose", testClassVars.udv().string("Var1"), "a");
-			assertEquals("Sample Purpose", testClassVars.udv().string("Var2"), "a");
-			assertEquals("Sample Purpose", testClassVars.udv().string("Var3"), "a");
-			assertEquals("Sample Purpose", testClassVars.udv().string("Var4"), "a");
-			assertEquals("Sample Purpose", testClassVars.udv().string("Var5"), "a");
-			assertEquals("Sample Purpose", testClassVars.udv().string("Var6"), "a");
+			assertEquals("Sample Purpose", testClassVars.utv().string("Var1"), "a");
+			assertEquals("Sample Purpose", testClassVars.utv().string("Var2"), "a");
+			assertEquals("Sample Purpose", testClassVars.utv().string("Var3"), "a");
+			assertEquals("Sample Purpose", testClassVars.utv().string("Var4"), "a");
+			assertEquals("Sample Purpose", testClassVars.utv().string("Var5"), "a");
+			assertEquals("Sample Purpose", testClassVars.utv().string("Var6"), "a");
 			break;
 		case 2:
-			assertEquals("Sample Purpose", testClassVars.udv().string("Var1"), "a");
-			assertEquals("Sample Purpose", testClassVars.udv().string("Var2"), "b");
-			assertEquals("Sample Purpose", testClassVars.udv().string("Var3"), "b");
-			assertEquals("Sample Purpose", testClassVars.udv().string("Var4"), "b");
-			assertEquals("Sample Purpose", testClassVars.udv().string("Var5"), "b");
-			assertEquals("Sample Purpose", testClassVars.udv().string("Var6"), "b");
+			assertEquals("Sample Purpose", testClassVars.utv().string("Var1"), "a");
+			assertEquals("Sample Purpose", testClassVars.utv().string("Var2"), "b");
+			assertEquals("Sample Purpose", testClassVars.utv().string("Var3"), "b");
+			assertEquals("Sample Purpose", testClassVars.utv().string("Var4"), "b");
+			assertEquals("Sample Purpose", testClassVars.utv().string("Var5"), "b");
+			assertEquals("Sample Purpose", testClassVars.utv().string("Var6"), "b");
 			break;
 		case 3:
-			assertEquals("Sample Purpose", testClassVars.udv().string("Var1"), "a");
-			assertEquals("Sample Purpose", testClassVars.udv().string("Var2"), "b");
-			assertEquals("Sample Purpose", testClassVars.udv().string("Var3"), "c");
-			assertEquals("Sample Purpose", testClassVars.udv().string("Var4"), "c");
-			assertEquals("Sample Purpose", testClassVars.udv().string("Var5"), "c");
-			assertEquals("Sample Purpose", testClassVars.udv().string("Var6"), "c");
+			assertEquals("Sample Purpose", testClassVars.utv().string("Var1"), "a");
+			assertEquals("Sample Purpose", testClassVars.utv().string("Var2"), "b");
+			assertEquals("Sample Purpose", testClassVars.utv().string("Var3"), "c");
+			assertEquals("Sample Purpose", testClassVars.utv().string("Var4"), "c");
+			assertEquals("Sample Purpose", testClassVars.utv().string("Var5"), "c");
+			assertEquals("Sample Purpose", testClassVars.utv().string("Var6"), "c");
 			break;
 		case 4:
-			assertEquals("Sample Purpose", testClassVars.udv().string("Var1"), "a");
-			assertEquals("Sample Purpose", testClassVars.udv().string("Var2"), "b");
-			assertEquals("Sample Purpose", testClassVars.udv().string("Var3"), "c");
-			assertEquals("Sample Purpose", testClassVars.udv().string("Var4"), "d");
-			assertEquals("Sample Purpose", testClassVars.udv().string("Var5"), "d");
-			assertEquals("Sample Purpose", testClassVars.udv().string("Var6"), "d");
+			assertEquals("Sample Purpose", testClassVars.utv().string("Var1"), "a");
+			assertEquals("Sample Purpose", testClassVars.utv().string("Var2"), "b");
+			assertEquals("Sample Purpose", testClassVars.utv().string("Var3"), "c");
+			assertEquals("Sample Purpose", testClassVars.utv().string("Var4"), "d");
+			assertEquals("Sample Purpose", testClassVars.utv().string("Var5"), "d");
+			assertEquals("Sample Purpose", testClassVars.utv().string("Var6"), "d");
 			break;
 		case 5:
-			assertEquals("Sample Purpose", testClassVars.udv().string("Var1"), "a");
-			assertEquals("Sample Purpose", testClassVars.udv().string("Var2"), "b");
-			assertEquals("Sample Purpose", testClassVars.udv().string("Var3"), "c");
-			assertEquals("Sample Purpose", testClassVars.udv().string("Var4"), "d");
-			assertEquals("Sample Purpose", testClassVars.udv().string("Var5"), "e");
-			assertEquals("Sample Purpose", testClassVars.udv().string("Var6"), "e");
+			assertEquals("Sample Purpose", testClassVars.utv().string("Var1"), "a");
+			assertEquals("Sample Purpose", testClassVars.utv().string("Var2"), "b");
+			assertEquals("Sample Purpose", testClassVars.utv().string("Var3"), "c");
+			assertEquals("Sample Purpose", testClassVars.utv().string("Var4"), "d");
+			assertEquals("Sample Purpose", testClassVars.utv().string("Var5"), "e");
+			assertEquals("Sample Purpose", testClassVars.utv().string("Var6"), "e");
 			break;
 		}
 	}
 
 	public void test1(TestVariables testMethodVars) throws Exception{	
 		// You have access to class level uds at method level as well
-		assertEquals("Sample Purpose", testMethodVars.udv().string("Var1"), "a");
+		assertEquals("Sample Purpose", testMethodVars.utv().string("Var1"), "a");
 		assertEquals("Sample Purpose", 3,3);
 	}
 	
 	public void test2(TestVariables testMethodVars) throws Exception{
 		// You have access to class level uds at method level as well
-		assertEquals("Sample Purpose", testMethodVars.udv().string("Var1"), "a");
+		assertEquals("Sample Purpose", testMethodVars.utv().string("Var1"), "a");
 		assertEquals("Sample Purpose", 1,2);
 	}
 	

@@ -24,23 +24,23 @@ import com.autocognite.arjuna.interfaces.TestVariables;
 import static com.autocognite.arjuna.assertions.Assertions.*;
 
 @TestClass
-@Instances( udv={"var1=a","var2=c,d"})
+@Instances( utv={"var1=a","var2=c,d"})
 public class ClassInstancesDemo2{
 	
 	public ClassInstancesDemo2(TestVariables testClassVars) throws Exception{		
-		assertEquals("Sample Purpose", testClassVars.udv().string("Var1"), "a");
-		assertEquals("Sample Purpose", testClassVars.udv().string("Var2"), "c");
+		assertEquals("Sample Purpose", testClassVars.utv().string("Var1"), "a");
+		assertEquals("Sample Purpose", testClassVars.utv().string("Var2"), "c");
 	}
 
 	public void test1(TestVariables testMethodVars) throws Exception{	
-		assertEquals("Sample Purpose", testMethodVars.udv().string("Var1"), "a");
-		assertEquals("Sample Purpose", testMethodVars.udv().string("Var2"), "c");
+		assertEquals("Sample Purpose", testMethodVars.utv().string("Var1"), "a");
+		assertEquals("Sample Purpose", testMethodVars.utv().string("Var2"), "c");
 		assertEquals("Sample Purpose", 3,3);
 	}
 	
 	public void test2(TestVariables testMethodVars) throws Exception{
-		assertEquals("Sample Purpose", testMethodVars.udv().string("Var1"), "a");
-		assertEquals("Sample Purpose", testMethodVars.udv().string("Var2"), "c");
+		assertEquals("Sample Purpose", testMethodVars.utv().string("Var1"), "a");
+		assertEquals("Sample Purpose", testMethodVars.utv().string("Var2"), "c");
 		assertEquals("Sample Purpose", 1,2);
 	}
 	

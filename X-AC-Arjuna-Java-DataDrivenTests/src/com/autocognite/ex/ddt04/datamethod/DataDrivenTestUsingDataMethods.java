@@ -38,7 +38,7 @@ public class DataDrivenTestUsingDataMethods{
 
 	@DriveWithDataMethod("getData")
 	public void testWithLocalDataMethod1(TestVariables testVars) throws Exception{
-		DataRecord record = testVars.dataRecord();
+		DataRecord record = testVars.record();
 		String actual = String.format("%s::%s", record.valueAt(0).asString(), record.valueAt(1).asString());
 		assertEquals("Sample Purpose", actual, record.valueAt(2).asString());
 	}	
@@ -55,7 +55,7 @@ public class DataDrivenTestUsingDataMethods{
 
 	@DriveWithDataMethod("User defined data method name")
 	public void testWithLocalDataMethod2(TestVariables testVars) throws Exception{
-		DataRecord record = testVars.dataRecord();
+		DataRecord record = testVars.record();
 		String actual = String.format("%s::%s", record.valueAt(0).asString(), record.valueAt(1).asString());
 		assertEquals("Sample Purpose", actual, record.valueAt(2).asString());
 	}

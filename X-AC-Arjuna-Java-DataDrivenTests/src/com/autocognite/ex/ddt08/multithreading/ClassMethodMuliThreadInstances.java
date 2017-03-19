@@ -52,7 +52,7 @@ public class ClassMethodMuliThreadInstances{
 	@DriveWithDataGenerator(generatorClass = LazyDataGenerator.class)
 	@TestMethod(testThreads=5)
 	public void test1(TestVariables testVars) throws Exception{
-		DataRecord record = testVars.dataRecord();
+		DataRecord record = testVars.record();
 		String actual = String.format("%s::%s", record.value("left").asString(), record.value("right").asString());
 		assertEquals("Sample Purpose", actual, record.value("EXPECTED").asString());
 	}	
@@ -61,7 +61,7 @@ public class ClassMethodMuliThreadInstances{
 	@DriveWithDataGenerator(generatorClass = LazyDataGenerator.class)
 	@TestMethod(testThreads=5)
 	public void test2(TestVariables testVars) throws Exception{
-		DataRecord record = testVars.dataRecord();
+		DataRecord record = testVars.record();
 		String actual = String.format("%s::%s", record.value("left").asString(), record.value("right").asString());
 		assertEquals("Sample Purpose", actual, record.value("EXPECTED").asString());
 	}	

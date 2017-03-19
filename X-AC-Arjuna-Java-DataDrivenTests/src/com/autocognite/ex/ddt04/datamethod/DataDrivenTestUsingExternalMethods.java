@@ -31,7 +31,7 @@ public class DataDrivenTestUsingExternalMethods{
 			containerClass = MethodContainer.class
 	)
 	public void testByProvidingClass(TestVariables testVars) throws Exception{
-		DataRecord record = testVars.dataRecord();
+		DataRecord record = testVars.record();
 		String actual = String.format("%s::%s", record.valueAt(0), record.valueAt(1));
 		assertEquals("Sample Purpose", actual, record.valueAt(2));
 	}
@@ -42,7 +42,7 @@ public class DataDrivenTestUsingExternalMethods{
 			containerClass = AnnotatedMethodContainer.class
 	)
 	public void testByProvidingClass2(TestVariables testVars) throws Exception{
-		DataRecord record = testVars.dataRecord();
+		DataRecord record = testVars.record();
 		String actual = String.format("%s::%s", record.valueAt(0), record.valueAt(1));
 		assertEquals("Sample Purpose", actual, record.valueAt(2));
 	}
@@ -52,7 +52,7 @@ public class DataDrivenTestUsingExternalMethods{
 			container = "AnnotatedMethodContainer"
 	)
 	public void testByProvidingClassName1(TestVariables testVars) throws Exception{
-		DataRecord record = testVars.dataRecord();
+		DataRecord record = testVars.record();
 		String actual = String.format("%s::%s", record.valueAt(0), record.valueAt(1));
 		assertEquals("Sample Purpose", actual, record.valueAt(2));
 	}
@@ -62,7 +62,7 @@ public class DataDrivenTestUsingExternalMethods{
 			container = "User defined data method container name"
 	)
 	public void testByProvidingClassName2(TestVariables testVars) throws Exception{
-		DataRecord record = testVars.dataRecord();
+		DataRecord record = testVars.record();
 		String actual = String.format("%s::%s", record.valueAt(0), record.valueAt(1));
 		assertEquals("Sample Purpose", actual, record.valueAt(2));
 	}

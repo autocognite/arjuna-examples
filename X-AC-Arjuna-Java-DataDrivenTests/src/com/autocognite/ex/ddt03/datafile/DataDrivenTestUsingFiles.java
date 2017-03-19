@@ -32,7 +32,7 @@ public class DataDrivenTestUsingFiles{
 	
 	@DriveWithDataFile(path="input.xls")
 	public void testWithXLS(TestVariables testVars) throws Exception{
-		DataRecord record = testVars.dataRecord();
+		DataRecord record = testVars.record();
 		String actual = String.format("%s::%s", record.value("left").asString(), record.value("right").asString());
 		assertEquals("Sample Purpose", actual, record.value("EXPECTED").asString());
 	}
@@ -40,14 +40,14 @@ public class DataDrivenTestUsingFiles{
 	// You can use a tab delimited file in the same manner
 	@DriveWithDataFile("input.txt")
 	public void testWithTSVDataFile(TestVariables testVars) throws Exception{
-		DataRecord record = testVars.dataRecord();
+		DataRecord record = testVars.record();
 		String actual = String.format("%s::%s", record.valueAt(0), record.valueAt(1));
 		assertEquals("Sample Purpose", actual, record.valueAt(2));
 	}
 	
 	@DriveWithDataFile(path="input.txt")
 	public void testWithTSVDataFileMapFormat(TestVariables testVars) throws Exception{
-		DataRecord record = testVars.dataRecord();
+		DataRecord record = testVars.record();
 		String actual = String.format("%s::%s", record.value("left"), record.value("right"));
 		assertEquals("Sample Purpose", actual, record.value("EXPECTED"));
 	}
@@ -58,14 +58,14 @@ public class DataDrivenTestUsingFiles{
 			delimiter = ","
 	)
 	public void testWithCSVDataFile(TestVariables testVars) throws Exception{
-		DataRecord record = testVars.dataRecord();
+		DataRecord record = testVars.record();
 		String actual = String.format("%s::%s", record.valueAt(0), record.valueAt(1));
 		assertEquals("Sample Purpose", actual, record.valueAt(2));
 	}	
 	
 	@DriveWithDataFile(path = "input.csv", delimiter = ",")
 	public void testWithCSVDataFileMapFormat(TestVariables testVars) throws Exception{
-		DataRecord record = testVars.dataRecord();
+		DataRecord record = testVars.record();
 		String actual = String.format("%s::%s", record.value("left"), record.value("right"));
 		assertEquals("Sample Purpose", actual, record.value("EXPECTED"));
 	}
@@ -75,7 +75,7 @@ public class DataDrivenTestUsingFiles{
 	// This means that the INI format should only be used for Map data format.	
 	@DriveWithDataFile(path = "input.ini")
 	public void testWithINIDataFileMapFormat(TestVariables testVars) throws Exception{
-		DataRecord record = testVars.dataRecord();
+		DataRecord record = testVars.record();
 		String actual = String.format("%s::%s", record.value("left"), record.value("right"));
 		assertEquals("Sample Purpose", actual, record.value("EXPECTED"));
 	}
