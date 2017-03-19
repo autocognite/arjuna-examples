@@ -29,7 +29,7 @@ import org.apache.log4j.Logger;
 
 @TestClass
 public class FixturesWithDDT{
-	private Logger logger = RunConfig.getCentralLogger();
+	private Logger logger = RunConfig.logger();
 	
 	public void setUpClass(){
 		logger.info("Called setUpClass");
