@@ -18,28 +18,29 @@
  ******************************************************************************/
 package com.autocognite.ex.testauto02.fixtures;
 
-import com.autocognite.arjuna.annotations.*;
-import static com.autocognite.arjuna.assertions.Assertions.*;
+import static com.arjunapro.testauto.assertions.Assertions.*;
+
+import com.arjunapro.testauto.annotations.*;
 
 @TestClass
-public class FixturesUsingAnnotations{
+public class BasicFixturesUsingAnnotations{
 	
-	@BeforeClassInstance
-	public void createTestFiles(){
+	@BeforeClass
+	public static void createTestFiles(){
 		System.out.println("Custom Set Up class executed");
 	}
 	
-	@AfterClassInstance
-	public void deleteTestFiles(){
+	@AfterClass
+	public static void deleteTestFiles(){
 		System.out.println("Custom Tear Down Class executed");
 	}
 	
-	@BeforeMethodInstance
+	@BeforeMethod
 	public void addEnvVarForTool(){
 		System.out.println("Custom Set Up Method executed");
 	}
 	
-	@AfterMethodInstance
+	@AfterMethod
 	public void clearEnvVarForTool(){
 		System.out.println("Custom Tear Down Method executed");
 	}

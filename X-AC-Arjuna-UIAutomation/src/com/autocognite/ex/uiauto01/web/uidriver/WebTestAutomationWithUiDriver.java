@@ -18,10 +18,11 @@
  ******************************************************************************/
 package com.autocognite.ex.uiauto01.web.uidriver;
 
-import com.autocognite.arjuna.annotations.*;
-import com.autocognite.arjuna.uiauto.factories.UiDriverFactory;
-import com.autocognite.arjuna.uiauto.interfaces.*;
-import static com.autocognite.arjuna.assertions.Assertions.*;
+import static com.arjunapro.testauto.assertions.Assertions.*;
+
+import com.arjunapro.testauto.annotations.*;
+import com.arjunapro.uiauto.factories.UiDriverFactory;
+import com.arjunapro.uiauto.interfaces.*;
 
 @TestClass
 public class WebTestAutomationWithUiDriver {
@@ -31,7 +32,7 @@ public class WebTestAutomationWithUiDriver {
 	static String logoutUrl = appUrl + "/wp-login.php?action=logout";
 	
 	public void test() throws Exception{
-		UiDriver uiDriver = UiDriverFactory.getWebUiDriver();
+		UiDriver uiDriver = UiDriverFactory.getSelenium();
 		uiDriver.goTo(adminUrl);		
 
 		UiElement userTextBox = uiDriver.elementWithId("user_login");

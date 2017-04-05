@@ -18,11 +18,12 @@
  ******************************************************************************/
 package com.autocognite.ex.testauto02.fixtures;
 
-import com.autocognite.arjuna.annotations.*;
-import static com.autocognite.arjuna.assertions.Assertions.*;
+import static com.arjunapro.testauto.assertions.Assertions.*;
+
+import com.arjunapro.testauto.annotations.*;
 
 @TestClass
-public class DefaultNamedFixtures{
+public class DefaultNamedBasicFixtures{
 	
 	public static void setUpClass(){
 		System.out.println("" + ": Called setUpClass");

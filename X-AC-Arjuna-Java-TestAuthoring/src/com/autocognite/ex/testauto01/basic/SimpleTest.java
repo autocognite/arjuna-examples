@@ -18,8 +18,9 @@
  ******************************************************************************/
 package com.autocognite.ex.testauto01.basic;
 
-import com.autocognite.arjuna.annotations.*;
-import static com.autocognite.arjuna.assertions.Assertions.*;
+import static com.arjunapro.testauto.assertions.Assertions.*;
+
+import com.arjunapro.testauto.annotations.*;
 
 @TestClass
 public class SimpleTest{

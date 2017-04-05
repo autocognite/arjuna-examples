@@ -18,11 +18,13 @@
  ******************************************************************************/
 package com.autocognite.ex.ddt02.dataarray;
 
-import com.autocognite.arjuna.annotations.*;
-import com.autocognite.arjuna.interfaces.DataRecord;
-import com.autocognite.arjuna.interfaces.TestVariables;
+import static com.arjunapro.testauto.assertions.Assertions.*;
 
-import static com.autocognite.arjuna.assertions.Assertions.*;
+import com.arjunapro.ddt.annotations.Data;
+import com.arjunapro.ddt.annotations.DriveWithDataArray;
+import com.arjunapro.ddt.interfaces.DataRecord;
+import com.arjunapro.testauto.annotations.*;
+import com.arjunapro.testauto.interfaces.TestVariables;
 
 @TestClass
 public class DataDrivenTestWithDataArray{

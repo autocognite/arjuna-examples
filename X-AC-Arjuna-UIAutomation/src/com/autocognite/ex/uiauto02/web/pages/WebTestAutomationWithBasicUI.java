@@ -18,11 +18,12 @@
  ******************************************************************************/
 package com.autocognite.ex.uiauto02.web.pages;
 
-import com.autocognite.arjuna.annotations.*;
-import com.autocognite.arjuna.uiauto.factories.UiDriverFactory;
-import com.autocognite.arjuna.uiauto.factories.UiFactory;
-import com.autocognite.arjuna.uiauto.interfaces.*;
-import static com.autocognite.arjuna.assertions.Assertions.*;
+import static com.arjunapro.testauto.assertions.Assertions.*;
+
+import com.arjunapro.testauto.annotations.*;
+import com.arjunapro.uiauto.factories.UiDriverFactory;
+import com.arjunapro.uiauto.factories.PageFactory;
+import com.arjunapro.uiauto.interfaces.*;
 
 @TestClass
 public class WebTestAutomationWithBasicUI {
@@ -31,10 +32,10 @@ public class WebTestAutomationWithBasicUI {
 	static String logoutUrl = appUrl + "/wp-login.php?action=logout";
 	
 	public void test() throws Exception{
-		UiDriver uiDriver = UiDriverFactory.getWebUiDriver();
+		UiDriver uiDriver = UiDriverFactory.getSelenium();
 		uiDriver.goTo(adminUrl);
 		
-		Page home = UiFactory.getPage(uiDriver, "/wordpress/HomePage.ini");		
+		Page home = PageFactory.getPage(uiDriver, "/wordpress/HomePage.ini");		
 
 		UiElement userTextBox = home.element("LOGIN");
 		userTextBox.waitForPresence();
@@ -42,10 +43,10 @@ public class WebTestAutomationWithBasicUI {
 		home.element("PASSWORD").enterText("bitnami");
 		home.element("SUBMIT").click();		
 		
-		Page leftNav = UiFactory.getPage(uiDriver, "/wordpress/LeftNavigation.ini");	
+		Page leftNav = PageFactory.getPage(uiDriver, "/wordpress/LeftNavigation.ini");	
 		leftNav.element("POSTS").hoverAndClickElement(leftNav.element("CATEGORIES"));	
 		
-		Page categories = UiFactory.getPage(uiDriver, "/wordpress/Categories.ini");
+		Page categories = PageFactory.getPage(uiDriver, "/wordpress/Categories.ini");
 
 		UiElement tags = categories.element("CAT_CHECKBOXES");
 		tags.getInstanceAtOrdinal(2).check();
@@ -58,7 +59,7 @@ public class WebTestAutomationWithBasicUI {
 
 		leftNav.element("SETTINGS").click();
 
-		Page settings = UiFactory.getPage(uiDriver, "/wordpress/Settings.ini");
+		Page settings = PageFactory.getPage(uiDriver, "/wordpress/Settings.ini");
 			
 		UiElement blogNameTextBox = settings.element("BLOG_NAME");
 		blogNameTextBox.enterText("Hello");

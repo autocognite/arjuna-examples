@@ -16,14 +16,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  ******************************************************************************/
-package com.autocognite.ex.ddt06.fixtures;
+package com.autocognite.ex.ddt05.fixtures;
 
-import com.autocognite.arjuna.annotations.*;
-import com.autocognite.arjuna.config.RunConfig;
-import com.autocognite.arjuna.interfaces.DataRecord;
-import com.autocognite.arjuna.interfaces.TestVariables;
+import com.arjunapro.ddt.annotations.DataMethod;
+import com.arjunapro.ddt.annotations.DriveWithDataMethod;
+import com.arjunapro.ddt.interfaces.DataRecord;
+import com.arjunapro.testauto.annotations.*;
+import com.arjunapro.testauto.config.RunConfig;
+import com.arjunapro.testauto.interfaces.TestVariables;
 
-import static com.autocognite.arjuna.assertions.Assertions.*;
+import static com.arjunapro.testauto.assertions.Assertions.*;
 
 import org.apache.log4j.Logger;
 

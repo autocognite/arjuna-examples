@@ -18,9 +18,9 @@
  ******************************************************************************/
 package com.autocognite.ex.testauto07.multithreading;
 
-import com.autocognite.arjuna.annotations.*;
+import static com.arjunapro.testauto.assertions.Assertions.*;
 
-import static com.autocognite.arjuna.assertions.Assertions.*;
+import com.arjunapro.testauto.annotations.*;
 
 @TestClass(methodThreads=3)
 public class ClassWithMultiThreadedMethods{
