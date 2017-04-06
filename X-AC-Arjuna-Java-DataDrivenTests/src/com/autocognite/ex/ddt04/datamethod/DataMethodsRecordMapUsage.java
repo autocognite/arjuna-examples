@@ -18,22 +18,22 @@
  ******************************************************************************/
 package com.autocognite.ex.ddt04.datamethod;
 
-import static com.arjunapro.testauto.assertions.Assertions.*;
+import static com.arjunapro.testauto.assertions.Assertions.assertEquals;
 
 import com.arjunapro.ddt.annotations.DataMethod;
 import com.arjunapro.ddt.annotations.DriveWithDataMethod;
-import com.arjunapro.ddt.datarecord.DefaultDataRecordContainer;
+import com.arjunapro.ddt.datarecord.MapDataRecordContainer;
 import com.arjunapro.ddt.interfaces.DataRecord;
 import com.arjunapro.ddt.interfaces.DataRecordContainer;
-import com.arjunapro.testauto.annotations.*;
+import com.arjunapro.testauto.annotations.TestClass;
 import com.arjunapro.testauto.interfaces.TestVariables;
 
 @TestClass
 public class DataMethodsRecordMapUsage{	
 	
 	@DataMethod("DG2")
-	public DataRecordContainer getMapData(){
-		DataRecordContainer container = new DefaultDataRecordContainer();
+	public DataRecordContainer getMapData() throws Exception{
+		DataRecordContainer container = new MapDataRecordContainer();
 		// Create headers and assign to container
 		String[] names = {"left", "right", "expected"};
 		container.setHeaders(names);

@@ -18,9 +18,9 @@
  ******************************************************************************/
 package com.autocognite.ex.testauto02.fixtures;
 
-import static com.arjunapro.testauto.assertions.Assertions.*;
+import static com.arjunapro.testauto.assertions.Assertions.assertEquals;
 
-import com.arjunapro.testauto.annotations.*;
+import com.arjunapro.testauto.annotations.TestClass;
 
 @TestClass
 public class DefaultNamedBasicFixtures{

@@ -18,9 +18,11 @@
  ******************************************************************************/
 package com.autocognite.ex.testauto01.basic;
 
-import static com.arjunapro.testauto.assertions.Assertions.*;
+import static com.arjunapro.testauto.assertions.Assertions.assertEquals;
+import static com.arjunapro.testauto.assertions.Assertions.error;
 
-import com.arjunapro.testauto.annotations.*;
+import com.arjunapro.testauto.annotations.TestClass;
+import com.arjunapro.testauto.annotations.TestMethod;
 
 @TestClass
 public class SimpleTest{

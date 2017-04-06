@@ -18,9 +18,17 @@
  ******************************************************************************/
 package com.autocognite.ex.testauto02.fixtures;
 
-import static com.arjunapro.testauto.assertions.Assertions.*;
+import static com.arjunapro.testauto.assertions.Assertions.error;
+import static com.arjunapro.testauto.assertions.Assertions.fail;
 
-import com.arjunapro.testauto.annotations.*;
+import com.arjunapro.testauto.annotations.AfterClass;
+import com.arjunapro.testauto.annotations.AfterMethod;
+import com.arjunapro.testauto.annotations.AfterTest;
+import com.arjunapro.testauto.annotations.BeforeClass;
+import com.arjunapro.testauto.annotations.BeforeMethod;
+import com.arjunapro.testauto.annotations.BeforeTest;
+import com.arjunapro.testauto.annotations.TestClass;
+import com.arjunapro.testauto.annotations.TestMethod;
 
 @TestClass
 public class BasicFixturesUsingAnnotations{
