@@ -18,15 +18,15 @@
  ******************************************************************************/
 package com.autocognite.ex.testauto03.assertions;
 
-import static com.arjunapro.testauto.assertions.Assertions.assertArrayEquals;
-import static com.arjunapro.testauto.assertions.Assertions.assertEquals;
-import static com.arjunapro.testauto.assertions.Assertions.assertNull;
-import static com.arjunapro.testauto.assertions.Assertions.assertSame;
-import static com.arjunapro.testauto.assertions.Assertions.assertTrue;
-import static com.arjunapro.testauto.assertions.Assertions.error;
-import static com.arjunapro.testauto.assertions.Assertions.fail;
+import static unitee.assertions.Assertions.assertArrayEquals;
+import static unitee.assertions.Assertions.assertEquals;
+import static unitee.assertions.Assertions.assertNull;
+import static unitee.assertions.Assertions.assertSame;
+import static unitee.assertions.Assertions.assertTrue;
+import static unitee.assertions.Assertions.error;
+import static unitee.assertions.Assertions.fail;
 
-import com.arjunapro.testauto.annotations.TestClass;
+import unitee.annotations.TestClass;
 
 @TestClass
 public class TestMultipleAssertionTypes{

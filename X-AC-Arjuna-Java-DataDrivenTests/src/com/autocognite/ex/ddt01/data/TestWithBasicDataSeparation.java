@@ -18,12 +18,12 @@
  ******************************************************************************/
 package com.autocognite.ex.ddt01.data;
 
-import static com.arjunapro.testauto.assertions.Assertions.assertEquals;
+import static unitee.assertions.Assertions.assertEquals;
 
-import com.arjunapro.ddt.annotations.DriveWithData;
-import com.arjunapro.ddt.interfaces.DataRecord;
-import com.arjunapro.testauto.annotations.TestClass;
-import com.arjunapro.testauto.interfaces.TestVariables;
+import arjunasdk.ddauto.interfaces.DataRecord;
+import unitee.annotations.DriveWithData;
+import unitee.annotations.TestClass;
+import unitee.interfaces.TestVariables;
 
 @TestClass
 public class TestWithBasicDataSeparation{

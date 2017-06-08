@@ -18,8 +18,8 @@
  ******************************************************************************/
 package com.autocognite.ex.ddt04.datamethod;
 
-import com.arjunapro.ddt.annotations.DataMethod;
-import com.arjunapro.ddt.annotations.DataMethodContainer;
+import unitee.annotations.DataMethod;
+import unitee.annotations.DataMethodContainer;
 
 @DataMethodContainer("User defined data method container name")
 public class AnnotatedMethodContainer{

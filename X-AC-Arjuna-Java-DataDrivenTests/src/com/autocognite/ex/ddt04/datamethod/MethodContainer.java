@@ -18,7 +18,7 @@
  ******************************************************************************/
 package com.autocognite.ex.ddt04.datamethod;
 
-import com.arjunapro.ddt.annotations.DataMethod;
+import unitee.annotations.DataMethod;
 
 public class MethodContainer{
 

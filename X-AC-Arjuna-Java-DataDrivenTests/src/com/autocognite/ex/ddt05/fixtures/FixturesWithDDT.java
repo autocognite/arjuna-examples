@@ -18,16 +18,16 @@
  ******************************************************************************/
 package com.autocognite.ex.ddt05.fixtures;
 
-import static com.arjunapro.testauto.assertions.Assertions.assertEquals;
+import static unitee.assertions.Assertions.assertEquals;
 
 import org.apache.log4j.Logger;
 
-import com.arjunapro.ddt.annotations.DataMethod;
-import com.arjunapro.ddt.annotations.DriveWithDataMethod;
-import com.arjunapro.ddt.interfaces.DataRecord;
-import com.arjunapro.testauto.annotations.TestClass;
-import com.arjunapro.testauto.config.RunConfig;
-import com.arjunapro.testauto.interfaces.TestVariables;
+import arjunasdk.config.RunConfig;
+import arjunasdk.ddauto.interfaces.DataRecord;
+import unitee.annotations.DataMethod;
+import unitee.annotations.DriveWithDataMethod;
+import unitee.annotations.TestClass;
+import unitee.interfaces.TestVariables;
 
 @TestClass
 public class FixturesWithDDT{
