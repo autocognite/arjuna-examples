@@ -18,15 +18,12 @@
  ******************************************************************************/
 package com.autocognite.ex.ddt04.datamethod;
 
-import static unitee.assertions.Assertions.assertEquals;
+import static unitee.assertions.Assertions.*;
 
-import arjunasdk.ddauto.datarecord.MapDataRecordContainer;
-import arjunasdk.ddauto.interfaces.DataRecord;
-import arjunasdk.ddauto.interfaces.DataRecordContainer;
-import unitee.annotations.DataMethod;
-import unitee.annotations.DriveWithDataMethod;
-import unitee.annotations.TestClass;
-import unitee.interfaces.TestVariables;
+import arjunasdk.ddauto.interfaces.*;
+import arjunasdk.ddauto.lib.*;
+import unitee.annotations.*;
+import unitee.interfaces.*;
 
 @TestClass
 public class DataMethodsRecordMapUsage{	

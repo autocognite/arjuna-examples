@@ -16,7 +16,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  ******************************************************************************/
-package com.autocognite.ex.ddt04.datamethod;
+package com.autocognite.ex.ddt05.datagenerator;
 
 import static unitee.assertions.Assertions.*;
 
@@ -25,40 +25,22 @@ import unitee.annotations.*;
 import unitee.interfaces.*;
 
 @TestClass
-public class DataDrivenTestUsingDataMethods{
-
-	@DataMethod
-	public static Object[][] getData(){
-		Object[][] records = {
-				{1,2,"1::2"},
-				{4,5,"4::6"},
-		};
-		return records;
-	}
-
-	@DriveWithDataMethod("getData")
-	public void testWithLocalDataMethod1(TestVariables testVars) throws Exception{
+public class DataDrivenTestUsingDataGenerators{
+	
+	@DriveWithDataGenerator(name="Greedy")
+	public void testGreedy(TestVariables testVars) throws Exception{
 		DataRecord record = testVars.record();
-		String actual = String.format("%s::%s", record.valueAt(0).asString(), record.valueAt(1).asString());
-		assertEquals("Sample Purpose", actual, record.valueAt(2).asString());
+		String actual = String.format("%s::%s", record.value("left").asString(), record.value("right").asString());
+		assertEquals("Sample Purpose", actual, record.value("EXPECTED").asString());
 	}	
 	
-	
-	@DataMethod("User defined data method name")
-	public static Object[][] getData2(){
-		Object[][] records = {
-				{1,2,"1::2"},
-				{4,5,"4::6"},
-		};
-		return records;
-	}
-
-	@DriveWithDataMethod("User defined data method name")
-	public void testWithLocalDataMethod2(TestVariables testVars) throws Exception{
+	@TestMethod(testThreads=10)
+	@DriveWithDataGenerator(name="Lazy")
+	public void testLazy(TestVariables testVars) throws Exception{
 		DataRecord record = testVars.record();
-		String actual = String.format("%s::%s", record.valueAt(0).asString(), record.valueAt(1).asString());
-		assertEquals("Sample Purpose", actual, record.valueAt(2).asString());
-	}
+		String actual = String.format("%s::%s", record.value("left").asString(), record.value("right").asString());
+		assertEquals("Sample Purpose", actual, record.value("EXPECTED").asString());
+	}		
 
 }
 

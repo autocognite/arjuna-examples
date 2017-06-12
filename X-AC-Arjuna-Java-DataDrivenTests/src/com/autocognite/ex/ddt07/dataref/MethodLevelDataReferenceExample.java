@@ -16,46 +16,31 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  ******************************************************************************/
-package com.autocognite.ex.testauto02.fixtures;
+package com.autocognite.ex.ddt07.dataref;
 
 import static unitee.assertions.Assertions.*;
 
+import arjunasdk.ddauto.interfaces.DataRecord;
 import unitee.annotations.*;
+import unitee.interfaces.*;
 
+@FileDataReference(path = "dataref.xls", name="test")
 @TestClass
-public class DefaultNamedBasicFixtures{
-	
-	public static void setUpClass(){
-		System.out.println("" + ": Called setUpClass");
-	}
-	
-	public void setUpMethod(){
-		System.out.println("" + ": Called setUpMethod");
-	}
-	
-	public void setUpTest(){
-		System.out.println("" + ": Called setUpTest");
-	}
-	
-	public void tearDownTest(){
-		System.out.println("" + ": Called tearDownTest");
-	}
-	
-	public void tearDownMethod(){
-		System.out.println("" + ": Called tearDownMethod");
-	}
-	
-	public static void tearDownClass(){
-		System.out.println("" + ": Called tearDownClass");
-	}
+public class MethodLevelDataReferenceExample{
 
-	public void testMethod1() throws Exception{
-		System.out.println("" + ": Called testMethod 1");
-		assertEquals("Sample Purpose", 1,1);
-	}
-	
-	public void testMethod2() throws Exception{
-		System.out.println("" + ": Called testMethod 2");
-		assertEquals("Sample Purpose", 3,4);
+	@FileDataReference(path = "dataref.xls", name="somename")
+	public void testEx(TestVariables testMethodVars) throws Exception{	
+		DataRecord dataRec = null;
+		// My
+		dataRec = testMethodVars.refer("test").record("Bronze");
+		assertEquals("Sample Purpose", dataRec.value("user").asString(), "B1");
+		
+		// Class
+		dataRec = testMethodVars.refer("somename").record("Bronze");
+		assertEquals("Sample Purpose", dataRec.value("user").asString(), "B1");
+		
+		// Central
+		dataRec = testMethodVars.refer("dataref").record("Bronze");
+		assertEquals("Sample Purpose", dataRec.value("user").asString(), "B1");
 	}
 }

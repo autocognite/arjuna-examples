@@ -18,9 +18,9 @@
  ******************************************************************************/
 package com.autocognite.ex.testauto07.multithreading;
 
-import static unitee.assertions.Assertions.assertEquals;
+import static unitee.assertions.Assertions.*;
 
-import unitee.annotations.TestClass;
+import unitee.annotations.*;
 
 @TestClass(methodThreads=3)
 public class ClassWithMultiThreadedMethods{

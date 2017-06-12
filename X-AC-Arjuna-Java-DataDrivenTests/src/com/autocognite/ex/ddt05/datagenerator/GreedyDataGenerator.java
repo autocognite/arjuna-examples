@@ -16,49 +16,44 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  ******************************************************************************/
-package com.autocognite.ex.ddt04.datamethod;
+package com.autocognite.ex.ddt05.datagenerator;
 
 import static unitee.assertions.Assertions.*;
 
+import java.util.Iterator;
+
+import arjunasdk.ddauto.exceptions.*;
 import arjunasdk.ddauto.interfaces.*;
+import arjunasdk.ddauto.lib.*;
 import unitee.annotations.*;
 import unitee.interfaces.*;
 
-@TestClass
-public class DataDrivenTestUsingDataMethods{
+/*
+ * It's greedy. All values are loaded in memory.
+ * OK for small set of data.
+ * (Optional) Notice that we are providing header values. This makes it useful for all test signatures.
+ */
 
-	@DataMethod
-	public static Object[][] getData(){
+@DataGenerator("Greedy")
+public class GreedyDataGenerator extends BaseDataSource {
+	DataRecordContainer container = null;
+	
+	public GreedyDataGenerator() throws Exception{
+		container = new MapDataRecordContainer();
+		// Create headers and assign to container
+		String[] names = {"left", "right", "expected"};
+		container.setHeaders(names);
+		//Rest is same
 		Object[][] records = {
 				{1,2,"1::2"},
 				{4,5,"4::6"},
 		};
-		return records;
+		container.addAll(records);
 	}
 
-	@DriveWithDataMethod("getData")
-	public void testWithLocalDataMethod1(TestVariables testVars) throws Exception{
-		DataRecord record = testVars.record();
-		String actual = String.format("%s::%s", record.valueAt(0).asString(), record.valueAt(1).asString());
-		assertEquals("Sample Purpose", actual, record.valueAt(2).asString());
-	}	
-	
-	
-	@DataMethod("User defined data method name")
-	public static Object[][] getData2(){
-		Object[][] records = {
-				{1,2,"1::2"},
-				{4,5,"4::6"},
-		};
-		return records;
-	}
-
-	@DriveWithDataMethod("User defined data method name")
-	public void testWithLocalDataMethod2(TestVariables testVars) throws Exception{
-		DataRecord record = testVars.record();
-		String actual = String.format("%s::%s", record.valueAt(0).asString(), record.valueAt(1).asString());
-		assertEquals("Sample Purpose", actual, record.valueAt(2).asString());
+	@Override
+	public DataRecord next() throws Exception {
+		return this.container.next();
 	}
 
 }
-

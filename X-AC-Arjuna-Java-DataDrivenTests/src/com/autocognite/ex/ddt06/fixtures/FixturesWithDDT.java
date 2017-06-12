@@ -16,18 +16,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  ******************************************************************************/
-package com.autocognite.ex.ddt05.fixtures;
+package com.autocognite.ex.ddt06.fixtures;
 
-import static unitee.assertions.Assertions.assertEquals;
+import static unitee.assertions.Assertions.*;
 
 import org.apache.log4j.Logger;
 
 import arjunasdk.config.RunConfig;
-import arjunasdk.ddauto.interfaces.DataRecord;
-import unitee.annotations.DataMethod;
-import unitee.annotations.DriveWithDataMethod;
-import unitee.annotations.TestClass;
-import unitee.interfaces.TestVariables;
+import arjunasdk.ddauto.interfaces.*;
+import unitee.annotations.*;
+import unitee.interfaces.*;
 
 @TestClass
 public class FixturesWithDDT{

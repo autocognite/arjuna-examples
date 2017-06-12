@@ -16,19 +16,39 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  ******************************************************************************/
-package com.autocognite.ex.ddt04.datamethod;
+package com.autocognite.ex.ddt05.datagenerator;
 
-import unitee.annotations.*;
+import java.util.Iterator;
 
-@DataMethodContainer("User defined data method container name")
-public class AnnotatedMethodContainer{
+import arjunasdk.ddauto.interfaces.*;
+import arjunasdk.ddauto.lib.*;
 
-	@DataMethod("User defined data method name")
-	public static Object[][] getData2(){
+/*
+ * It's greedy. All values are loaded in memory.
+ * OK for small set of data.
+ * (Optional) Notice that we are providing header values. This makes it useful for all test signatures.
+ */
+//
+public class NonAnnotatedGreedyDG extends BaseDataSource {
+	DataRecordContainer container = null;
+	Iterator<DataRecord> iter = null;
+	
+	public NonAnnotatedGreedyDG() throws Exception{
+		container = new MapDataRecordContainer();
+		// Create headers and assign to container
+		String[] names = {"left", "right", "expected"};
+		container.setHeaders(names);
+		//Rest is same
 		Object[][] records = {
 				{1,2,"1::2"},
-				{4,5,"4::6"},
+				{1,2,"1::5"},
 		};
-		return records;
+		container.addAll(records);
 	}
+
+	@Override
+	public DataRecord next() throws Exception {
+		return this.container.next();
+	}
+
 }
