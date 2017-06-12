@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2015-16 AutoCognite Testing Research Pvt Ltd
+ * Copyright 2015-17 AutoCognite Testing Research Pvt Ltd
  * 
  * Website: www.AutoCognite.com
  * Email: support [at] autocognite.com
@@ -23,22 +23,22 @@ import static unitee.assertions.Assertions.*;
 import unitee.annotations.*;
 
 @TestClass
-public class SimpleTest{
+public class SimpleTest {
 
-	public void testMethodPass() throws Exception{	
-		assertEquals("Sample Purpose", 1,1);
+	public void testMethodPass() throws Exception {
+		assertEquals("Sample Purpose", 1, 1);
 	}
 
 	@TestMethod
-	public void anyNameTest() throws Exception{	
-		assertEquals("Sample Purpose", 1,1);
+	public void anyNameTest() throws Exception {
+		assertEquals("Sample Purpose", 1, 1);
 	}
 
-	public void testMethodFail( ) throws Exception{
-		assertEquals("Sample Purpose", 1,2);
+	public void testMethodFail() throws Exception {
+		assertEquals("Sample Purpose", 1, 2);
 	}
 
-	public void testMethodError() throws Exception{
+	public void testMethodError() throws Exception {
 		error("Dummy Error");
 	}
 }

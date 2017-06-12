@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2015-16 AutoCognite Testing Research Pvt Ltd
+ * Copyright 2015-17 AutoCognite Testing Research Pvt Ltd
  * 
  * Website: www.AutoCognite.com
  * Email: support [at] autocognite.com
@@ -23,52 +23,52 @@ import static unitee.assertions.Assertions.*;
 import unitee.annotations.*;
 
 @TestClass
-public class BasicFixturesUsingAnnotations{
-	
+public class BasicFixturesUsingAnnotations {
+
 	@BeforeClass
-	public static void createTestFiles(){
+	public static void createTestFiles() {
 		System.out.println("Custom Set Up class executed");
 	}
-	
+
 	@AfterClass
-	public static void deleteTestFiles(){
+	public static void deleteTestFiles() {
 		System.out.println("Custom Tear Down Class executed");
 	}
-	
+
 	@BeforeMethod
-	public void addEnvVarForTool(){
+	public void addEnvVarForTool() {
 		System.out.println("Custom Set Up Method executed");
 	}
-	
+
 	@AfterMethod
-	public void clearEnvVarForTool(){
+	public void clearEnvVarForTool() {
 		System.out.println("Custom Tear Down Method executed");
 	}
-	
+
 	@BeforeTest
-	public void launchTool(){
+	public void launchTool() {
 		System.out.println("Custom Set Up Test executed");
 	}
-	
+
 	@AfterTest
-	public void stopTool(){
+	public void stopTool() {
 		System.out.println("Custom Tear Down Test executed");
 	}
-	
+
 	@TestMethod
-	public void deleteFile() throws Exception{	
+	public void deleteFile() throws Exception {
 		System.out.println("Custom Test Method delete File executed.");
 	}
-	
+
 	@TestMethod
-	public void createFile() throws Exception{	
+	public void createFile() throws Exception {
 		System.out.println("Custom Test Method create File executed.");
 		// Simulate failure
 		fail("Simulated Failure");
 	}
-	
+
 	@TestMethod
-	public void updateFile() throws Exception{	
+	public void updateFile() throws Exception {
 		System.out.println("Custom Test Method create File executed.");
 		// Simulate failure
 		error("Simulated Error");

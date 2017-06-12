@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2015-16 AutoCognite Testing Research Pvt Ltd
+ * Copyright 2015-17 AutoCognite Testing Research Pvt Ltd
  * 
  * Website: www.AutoCognite.com
  * Email: support [at] autocognite.com
@@ -22,32 +22,32 @@ import static unitee.assertions.Assertions.*;
 
 import unitee.annotations.*;
 
-@TestClass(methodThreads=3)
-public class ClassWithMultiThreadedMethods{
+@TestClass(methodThreads = 3)
+public class ClassWithMultiThreadedMethods {
 
-	public void test1() throws Exception{	
-		assertEquals("Sample Purpose", 3,3);
+	public void test1() throws Exception {
+		assertEquals("Sample Purpose", 3, 3);
 	}
-	
-	public void test2() throws Exception{
-		assertEquals("Sample Purpose", 1,2);
+
+	public void test2() throws Exception {
+		assertEquals("Sample Purpose", 1, 2);
 	}
-	
-	public void test3() throws Exception{
-		assertEquals("Sample Purpose", 1,2);
+
+	public void test3() throws Exception {
+		assertEquals("Sample Purpose", 1, 2);
 	}
-	
-	public void test4() throws Exception{
-		assertEquals("Sample Purpose", 1,2);
+
+	public void test4() throws Exception {
+		assertEquals("Sample Purpose", 1, 2);
 	}
-	
-	public void test5() throws Exception{
-		assertEquals("Sample Purpose", 1,2);
+
+	public void test5() throws Exception {
+		assertEquals("Sample Purpose", 1, 2);
 	}
-	
-	public void test6() throws Exception{
-		assertEquals("Sample Purpose", 1,2);
+
+	public void test6() throws Exception {
+		assertEquals("Sample Purpose", 1, 2);
 	}
 }
 
-//dummy
+// dummy
