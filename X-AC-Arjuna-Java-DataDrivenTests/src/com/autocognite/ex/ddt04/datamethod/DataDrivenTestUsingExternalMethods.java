@@ -49,7 +49,7 @@ public class DataDrivenTestUsingExternalMethods{
 	
 	@DriveWithDataMethod(
 			name = "User defined data method name",
-			container = "AnnotatedMethodContainer"
+			container = "com.autocognite.ex.ddt04.datamethod.AnnotatedMethodContainer"
 	)
 	public void testByProvidingClassName1(TestVariables testVars) throws Exception{
 		DataRecord record = testVars.record();

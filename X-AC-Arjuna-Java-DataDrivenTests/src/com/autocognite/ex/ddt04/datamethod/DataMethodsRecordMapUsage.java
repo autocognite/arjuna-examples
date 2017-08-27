@@ -29,7 +29,7 @@ import unitee.interfaces.*;
 public class DataMethodsRecordMapUsage{	
 	
 	@DataMethod("DG2")
-	public DataRecordContainer getMapData() throws Exception{
+	public static DataRecordContainer getMapData() throws Exception{
 		DataRecordContainer container = new MapDataRecordContainer();
 		// Create headers and assign to container
 		String[] names = {"left", "right", "expected"};

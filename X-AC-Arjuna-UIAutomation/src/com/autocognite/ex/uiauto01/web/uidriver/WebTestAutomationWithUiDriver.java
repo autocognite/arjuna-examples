@@ -28,7 +28,7 @@ import unitee.annotations.TestClass;
 @TestClass
 public class WebTestAutomationWithUiDriver {
 	//change ip as per your install
-	static String appUrl = "http://10.10.1.32";
+	static String appUrl = "http://192.168.56.104";
 	static String adminUrl = appUrl + "/wp-admin/";
 	static String logoutUrl = appUrl + "/wp-login.php?action=logout";
 	
@@ -64,7 +64,7 @@ public class WebTestAutomationWithUiDriver {
 		tags.identifyAll().getRandomInstance().check();
 		tags.identifyAll().getRandomInstance().uncheck();
 	
-		uiDriver.elementWithCss(".dashicons-admin-settings").click();
+		uiDriver.elementWithCss(".dashicons-admin-settings").hoverAndClickElement(uiDriver.elementWithLinkText("General"));
 		
 		UiElement blogNameTextBox = uiDriver.elementWithId("blogname");
 		blogNameTextBox.enterText("Hello");
